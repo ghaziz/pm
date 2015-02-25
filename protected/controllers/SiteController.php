@@ -121,4 +121,30 @@ class SiteController extends Controller
         LogHelper::proccess(LogHelper::LOGOUT, LogHelper::USER, "کاربر خارج شد");
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+    public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+
+    public function accessRules()
+    {
+        return array(
+            array('allow',
+                'users' => array('@'),
+            ),
+            array('allow',
+                'actions' => array('login'),
+                'users' => array('?'),
+
+            ),
+            array('deny',
+                'users' => array('*'),
+            ),
+        );
+    }
+
+
 }

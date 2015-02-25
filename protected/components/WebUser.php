@@ -18,6 +18,15 @@ class WebUser extends CWebUser {
         return $user->name.' '.$user->family;
     }
 
+    protected function loadUser($id = null)
+    {
+        if ($this->_model === null) {
+            if ($id !== null)
+                $this->_model = Users::model()->findByPk($id);
+        }
+        return $this->_model;
+    }
+
     function getTypeOfUser()
     {
         if (Yii::app()->user->isGuest) {
@@ -26,21 +35,18 @@ class WebUser extends CWebUser {
         $user = $this->loadUser(Yii::app()->user->id);
         return $user->type_employee;
     }
+    // Load user model.
 
     public function getId()
     {
-        if(Yii::app()->user->isGuest)return -1;
+        if (Yii::app()->user->isGuest) return -1;
         return parent::getId();
     }
-    // Load user model.
-    protected function loadUser($id=null)
+
+    public function getImage()
     {
-        if($this->_model===null)
-        {
-            if($id!==null)
-                $this->_model=Users::model()->findByPk($id);
-        }
-        return $this->_model;
+        $user = $this->loadUser(Yii::app()->user->id);
+        return $user->photo;
     }
 }
 ?>

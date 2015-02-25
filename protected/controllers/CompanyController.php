@@ -94,12 +94,18 @@ class CompanyController extends Controller
     {
         return array(
             array('allow',  // allow authenticated  to perform 'index' and 'view' actions
-                'actions' => array('view'),
                 'users' => array('@'),
             ),
             array('deny',  // deny all users
                 'users' => array('*'),
             ),
+        );
+    }
+
+    public function filters()
+    {
+        return array(
+            'accessControl',
         );
     }
 
