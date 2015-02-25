@@ -29,7 +29,7 @@ class TaskController extends Controller
             $model->attributes = $_POST['Task'];
             $model->time = time();
             $type_user = Yii::app()->user->name;
-            if ($type_user == UserHelper::admin || $type_user == UserHelper::employer) {
+            if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
                 $model->confirm_status = TaskHelper::CONFIRMED;
             } else {
                 $model->confirm_status = TaskHelper::NOT_CONFIRMED;
@@ -61,7 +61,7 @@ class TaskController extends Controller
                 $model->attributes = $_POST['Task'];
                 $model->time = time();
                 $type_user = Yii::app()->user->name;
-                if ($type_user == UserHelper::admin || $type_user == UserHelper::employer) {
+                if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
                     $model->confirm_status = TaskHelper::CONFIRMED;
                 } else {
                     $model->confirm_status = TaskHelper::NOT_CONFIRMED;

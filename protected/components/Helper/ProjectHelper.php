@@ -22,23 +22,23 @@ class ProjectHelper
 	public static function getModel()
     {
 		$model = "";
-		$user = Users::model()->findByPk(Yii::app()->user->id);
-		$type_employee = $user->type_employee;
+		$type_employee = Yii::app()->user->typeOfUser;
 		
 		switch($type_employee){
-			case UserHelper::admin:
+			case UserHelper::ADMIN:
 			$model = Project::model()->findAll();
 			break;
-			case UserHelper::employer:
+			case UserHelper::EMPLOYER:
 			$model = Project::model()->findAll("user_id=:id", array(':id'=>Yii::app()->user->id));
 			break;
-			case UserHelper::Contractor:
-			$model = Project::model()->findAll("id_company=:id", array(':id'=>$user->id_company));
+			case UserHelper::CONTRACTOR:
+			$model = Project::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
 			break;	
-			case UserHelper::Employee:
-			$model = Project::model()->findAll("id_company=:id", array(':id'=>$user->id_company));
+			case UserHelper::EMPLOYEE:
+			$model = Project::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
 			break;	
 		}
+        if($model==null){return array();}
 		return $model;
 	}
 	

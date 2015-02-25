@@ -4,6 +4,7 @@ class AttachmentsController extends Controller
 {
     public function actionIndex()
     {
+        RoleHelper::checkAccessControl('project', 'edit', $this);
         if (isset($_GET['bind_type'])) {
             $action = Yii::app()->createUrl('attachments/attach', $_GET);
             $this->renderPartial('index', array('action' => $action), false, true);
@@ -12,6 +13,7 @@ class AttachmentsController extends Controller
 
     public function actionAttach()
     {
+        RoleHelper::checkAccessControl('project', 'edit', $this);
         if (isset($_GET['bind_type'], $_GET['bind_id'])) {
             $bind_id = $_GET['bind_id'];
             PM::isValidBindType($_GET['bind_type']);
@@ -34,6 +36,7 @@ class AttachmentsController extends Controller
 
     public function actionUpdateTypeAndDescription()
     {
+        RoleHelper::checkAccessControl('project', 'edit', $this);
         if (isset($_GET['attachmentsId'])) {
 
             AttachmentsHelper::updateTypeAndDescription($_GET['attachmentsId'], $_POST);
@@ -43,6 +46,7 @@ class AttachmentsController extends Controller
 
     public function actionList()
     {
+        RoleHelper::checkAccessControl('project', 'view', $this,true,false);
         if(isset($_GET['bind_type'],$_GET['bind_id'],$_GET['title'])){
             $model = Attachments::model()->findAll('bind_type=:bt and bind_id=:bi',array(
                 ':bt'=>$_GET['bind_type'],

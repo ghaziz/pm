@@ -61,7 +61,6 @@
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('company/index'); ?>">لیست شرکت ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('company/new')?>')">ایجاد</a></li>
-                                <li><a href="<?php echo $this->createUrl('company/attachments'); ?>">پیوست ها</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>پروژه ها</span></a>

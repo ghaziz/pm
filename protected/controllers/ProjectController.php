@@ -38,7 +38,7 @@ class ProjectController extends Controller
             $model->time = time();
             $type_user = Yii::app()->user->name;
             //check who is changing the project status
-            if ($type_user == UserHelper::admin || $type_user == UserHelper::employer) {
+            if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
                 $model->confirm_status = ProjectHelper::CONFIRMED;
             } else {
                 $model->confirm_status = ProjectHelper::NOT_CONFIRMED;
@@ -75,7 +75,7 @@ class ProjectController extends Controller
                 $model->time = time();
                 $type_user = Yii::app()->user->name;
                 //check who is changing the project status
-                if ($type_user == UserHelper::admin || $type_user == UserHelper::employer) {
+                if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
                     $model->confirm_status = ProjectHelper::CONFIRMED;
                 } else {
                     $model->confirm_status = ProjectHelper::NOT_CONFIRMED;

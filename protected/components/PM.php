@@ -14,18 +14,21 @@ class PM
         $model = Users::model()->findByPk($index);
         return $model->name . " " . $model->family;
     }
+
     //return project name
     public static function getProjectName($index)
     {
         $model = Project::model()->findByPk($index);
         return $model->title;
     }
+
     //return group name
     public static function getGroupName($index)
     {
         $model = GroupTask::model()->findByPk($index);
         return $model->title;
     }
+
     //status of project
     public static function getTypeOfStatus($model)
     {
@@ -50,6 +53,7 @@ class PM
 
         return $type;
     }
+
     //list of company
     public static function getCompaniesList()
     {
@@ -61,6 +65,7 @@ class PM
         return $companies;
 
     }
+
     //list of project
     public static function getProjecsList()
     {
@@ -72,6 +77,7 @@ class PM
         return $projects;
 
     }
+
     //list of task group
     public static function getGrouptask()
     {
@@ -84,26 +90,27 @@ class PM
 
     }
 
-    public static function getEmployersList()//karfarma ha + admin baraie taein karfama dar sabte proje
+    public static function getEmployersList()//karfarma ha + ADMIN baraie taein karfama dar sabte proje
     {
         $employers = array();
 
-        $amin = Users::model()->findAll("type_employee=:type", array(':type'=>UserHelper::admin));
-        if($amin!=null){
-        $employers[$amin[0]['id']] = $amin[0]['name'] . " " . $amin[0]['family']."(ادمین)";
+        $amin = Users::model()->findAll("type_employee=:type", array(':type' => UserHelper::ADMIN));
+        if ($amin != null) {
+            $employers[$amin[0]['id']] = $amin[0]['name'] . " " . $amin[0]['family'] . "(ادمین)";
         }
 
         $models = Users::model()->findAll(array(
             'condition' => 'type_employee = :type',
-            'params' => array(':type' => UserHelper::employer)
+            'params' => array(':type' => UserHelper::EMPLOYER)
         ));
         foreach ($models as $model) {
             $employers[$model['id']] = $model['name'] . " " . $model['family'];
         }
-        if($employers==null)return array();
+        if ($employers == null) return array();
         return $employers;
 
     }
+
     //status of project
     public static function getstatusOptions()
     {
@@ -114,6 +121,7 @@ class PM
             ProjectHelper::CANCELLED => 'کنسل شده',
         );
     }
+
     //options of file attachment
     public static function get_attachOptions()
     {
@@ -122,42 +130,47 @@ class PM
             AttachHelper::MINUTES => 'صورت جلسه',
         );
     }
+
     //important! remain days of projects and tasks
-    public static function remain_days($start,$end)
+    public static function remain_days($start, $end)
     {
-        $day = 0;
-        $month = 0;
-        $year = 0;
-        $tot = 0;
-        $end_year=PM::convert(Yii::app()->jdate->date('y', $end));
-        $first_year=PM::convert(Yii::app()->jdate->date('y', $start));
-        $year=(($end_year - $first_year)*12) - 1;
-        $end_month=PM::convert(Yii::app()->jdate->date('m', $end));
-        $first_month=PM::convert(Yii::app()->jdate->date('m', $start));
-        $end_day=PM::convert(Yii::app()->jdate->date('d', $end));
-        $first_day=PM::convert(Yii::app()->jdate->date('d', $start));
-        if($end_month >= $first_month)
-        {
-            $month=$end_month- $first_month;
-            $tot=$year + $month;
-        }
-        if($end_month < $first_month)
-        {
-            $month=abs($end_month- $first_month);
-            $tot=$year - $month;
-        }
-        if($end_day >= $first_day)
-        {
-            $day=$end_day - $first_day;
-        }
-        if($end_day < $first_day)
-        {
-            $month = $month - 1;
-            $day=(30 -$end_day) + $first_day;
-        }
-
-
-        return $tot."ماه "."و".$day."روز";
+//        $day = 0;
+//        $month = 0;
+//        $year = 0;
+//        $tot = 0;
+//        $end_year=PM::convert(Yii::app()->jdate->date('y', $end));
+//        $first_year=PM::convert(Yii::app()->jdate->date('y', $start));
+//        $year=(($end_year - $first_year)*12) - 1;
+//        $end_month=PM::convert(Yii::app()->jdate->date('m', $end));
+//        $first_month=PM::convert(Yii::app()->jdate->date('m', $start));
+//        $end_day=PM::convert(Yii::app()->jdate->date('d', $end));
+//        $first_day=PM::convert(Yii::app()->jdate->date('d', $start));
+//        if($end_month >= $first_month)
+//        {
+//            $month=$end_month- $first_month;
+//            $tot=$year + $month;
+//        }
+//        if($end_month < $first_month)
+//        {
+//            $month=abs($end_month- $first_month);
+//            $tot=$year - $month;
+//        }
+//        if($end_day >= $first_day)
+//        {
+//            $day=$end_day - $first_day;
+//        }
+//        if($end_day < $first_day)
+//        {
+//            $month = $month - 1;
+//            $day=(30 -$end_day) + $first_day;
+//        }
+//
+//
+//        return $tot."ماه "."و".$day."روز";
+        $remainTime = abs($end - $start);
+        $month = Yii::app()->jdate->date('m', $remainTime);
+        $day = Yii::app()->jdate->date('d', $remainTime);
+        return $month . "ماه " . "و" . $day . "روز";
     }
 
     public static function getAttachmentPath()

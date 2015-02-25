@@ -48,5 +48,11 @@ class WebUser extends CWebUser {
         $user = $this->loadUser(Yii::app()->user->id);
         return $user->photo;
     }
+
+    public function getCompany()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        return $user->id_company;
+    }
 }
 ?>

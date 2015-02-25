@@ -9,10 +9,10 @@
 class UserHelper
 {
 	//type_employee
-	CONST Employee = 0;
-	CONST Contractor = 1;
-	CONST employer = 2;
-	CONST admin = 3;
+	CONST EMPLOYEE = 0;
+	CONST CONTRACTOR = 1;
+	CONST EMPLOYER = 2;
+	CONST ADMIN = 3;
 
 	//I have changed Yii::app()->user->getName() in webuser
     public static function getDisplayName($id)
@@ -26,6 +26,29 @@ class UserHelper
             $user  = Users::model()->findByPk($id);
             return $user->name.' '.$user->family;
         }
+    }
+
+    public static function getModel()
+    {
+        $model = "";
+        $type_employee = Yii::app()->user->typeOfUser;
+
+        switch($type_employee){
+            case UserHelper::ADMIN:
+                $model = Users::model()->findAll();
+                break;
+            case UserHelper::EMPLOYER:
+                $model = Users::model()->find("id=:id", array(':id'=>Yii::app()->user->id));
+                break;
+            case UserHelper::CONTRACTOR:
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+                break;
+            case UserHelper::EMPLOYEE:
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+                break;
+        }
+        if($model==null){return array();};
+        return $model;
     }
 
 

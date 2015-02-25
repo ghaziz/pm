@@ -20,16 +20,16 @@ class TaskHelper
 		$type_employee = $user->type_employee;
 		
 		switch($type_employee){
-			case UserHelper::admin:
+			case UserHelper::ADMIN:
 			$model = Task::model()->findAll(array('order'=>'id_group'));
 			break;
-			case UserHelper::employer:
+			case UserHelper::EMPLOYER:
 			$model = Task::model()->findAll(array('order'=>'id_group'));//select * from task where project_id in(select project_id in prom project where user_id =..)
 			break;
-			case UserHelper::Contractor:
+			case UserHelper::CONTRACTOR:
 			$model = Task::model()->findAll(array('order'=>'id_group'));//برگرداندن تسکهای مربوط به شرکتی که این پیمانکار در آن است
 			break;	
-			case UserHelper::Employee:
+			case UserHelper::EMPLOYEE:
 			$model = Task::model()->findAll(array('order'=>'id_group'));//برگرداندن تسکهای مربوط به شرکتی که این پیمانکار در آن است
 			break;	
 		}

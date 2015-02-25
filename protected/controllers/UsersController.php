@@ -4,13 +4,14 @@ class UsersController extends Controller
 {
     public function actionIndex()
     {
-        $model = Users::model()->findAll();
+        $model = UserHelper::getModel();
         LogHelper::proccess(LogHelper::VIEW, LogHelper::USER, "مشاهده ی لیست کاربران");
         $this->render('index',array('model'=>$model));
     }
 
     public function actionNew()
     {
+        RoleHelper::checkUsersAccessControl('new',null,$this);
         $model = new Users();
         $role  = new Roles();
         // uncomment the following code to enable ajax-based validation
@@ -24,6 +25,7 @@ class UsersController extends Controller
         if (isset($_POST['Users'],$_POST['Roles'])) {
             //set user time
             $model->attributes = $_POST['Users'];
+            RoleHelper::checkUsersAccessControl('create-this-type-of-user',$model->type_employee,$this);
             $model->time = time();
             $model->active = 1;
             $model->photo = CUploadedFile::getInstance($model,'photo');
@@ -57,12 +59,14 @@ class UsersController extends Controller
     public function actionEdit()
     {
         if (isset($_GET['id'])) {
+            RoleHelper::checkUsersAccessControl('edit',$_GET['id'],$this);
             $model = Users::model()->findByPk($_GET['id']);
             $role  = Roles::model()->findByPk($_GET['id']);
             if (isset($_POST['Users'],$_POST['Roles'])) {
                 //set user time
                 $backUpPhoto = $model->photo;
                 $model->attributes = $_POST['Users'];
+                RoleHelper::checkUsersAccessControl('create-this-type-of-user',$model->type_employee,$this);
                 $model->birthday = PM::convertJalaliToGeorgian($model->birthday);
                 $model->photo = CUploadedFile::getInstance($model, 'photo');
                 if ($model->validate()) {
@@ -76,7 +80,10 @@ class UsersController extends Controller
                     }
                     $model->update(false);
                     $role->attributes = $_POST['Roles'];
-                    $role->save();
+                    if(RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
+                        $role->save();
+                    }
+
                     // redirect to success page
                     $this->renderPartial('/site/success', null, false, true);
                     Yii::app()->end();
@@ -90,6 +97,7 @@ class UsersController extends Controller
 
     public function actionDel(){
         if(isset($_POST['id'])){
+        RoleHelper::checkUsersAccessControl('edit',$_POST['id'],$this);
         $id = $_POST['id'];
         $user = Users::model()->findByPk($id);
         $user->active = 0;
@@ -100,6 +108,7 @@ class UsersController extends Controller
 
     public function actionDelPic(){
         if(isset($_POST['id'])){
+            RoleHelper::checkUsersAccessControl('edit',$_POST['id'],$this);
             $id = $_POST['id'];
             $user = Users::model()->findByPk($id);
             $user->photo = PM::getBaseAttachmentsPath() . 'no_avatar.png';

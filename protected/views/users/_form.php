@@ -2,6 +2,10 @@
 /* @var $this CompanyController */
 /* @var $model Company */
 /* @var $form CActiveForm */
+$permissionHiddenControl = '';
+if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
+    $permissionHiddenControl = 'hide';
+}
 ?>
 <div class="md-content ">
     <?php $form = $this->beginWidget('CActiveForm', array(
@@ -31,7 +35,7 @@
                         <li class="active"><a href="#home" data-toggle="tab">اطلاعات اولیه</a></li>
                         <li class=""><a href="#profile" data-toggle="tab">اطلاعات تماس</a></li>
                         <li class=""><a href="#messages" data-toggle="tab">موارد دیگر</a></li>
-                        <li class=""><a href="#permissions" data-toggle="tab">حق دسترسی</a></li>
+                        <li class="<?php echo $permissionHiddenControl; ?>"><a href="#permissions" data-toggle="tab">حق دسترسی</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane cont active" id="home">
@@ -120,7 +124,7 @@
                                 <?php echo $form->error($model, 'id_company', array('class' => 'col-sm-3 control-label')); ?>
                             </div>
                         </div>
-                        <div class="tab-pane" id="permissions">
+                        <div class="tab-pane <?php echo $permissionHiddenControl; ?>" id="permissions">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
