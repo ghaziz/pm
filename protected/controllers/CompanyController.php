@@ -2,7 +2,7 @@
 
 class CompanyController extends Controller
 {
-    /* edited by ebrahim ver 1.1 */
+    /* edited by ebrahim ver 1.2 */
     public function actionIndex()
     {
         if (!Yii::app()->user->isGuest) {
