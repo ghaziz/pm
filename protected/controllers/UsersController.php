@@ -117,6 +117,14 @@ class UsersController extends Controller
         }
     }
 
+    public function actionInfo(){
+        if (isset($_GET['id'])) {
+            RoleHelper::checkUsersAccessControl('edit',$_GET['id'],null,$this);
+            $model = Users::model()->findByPk($_GET['id']);
+        }
+        $this->renderPartial('info', array('model' => $model, false, true));
+    }
+
     public function filters()
     {
         return array(

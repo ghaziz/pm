@@ -3,23 +3,44 @@
 /**
  * Created by PhpStorm.
  * User: Ghazi
- * Date: 23/02/2015
- * Time: 18:00 PM
+ * Date: 24/02/2015
+ * Time: 16:00 PM
  */
 class TaskHelper
 {
+	//status of task
+	CONST OPEN = 0;
+	CONST COMPLETED = 1;
+	CONST ON_HOLD = 2;
+	CONST CANCELLED = 3;
 	//confirm status
 	CONST NOT_CONFIRMED = 0;
 	CONST CONFIRMED = 1;
 	
-	//this return the model that different for any user-permission-used in project-index
-	public static function getModel()
+		//1.0.2 please change this
+	public static function getModel($status="")
     {
 		$model = "";
-		$user = Users::model()->findByPk(Yii::app()->user->id);
-		$type_employee = $user->type_employee;
-		
-		switch($type_employee){
+		$type_employee = Yii::app()->user->typeOfUser;
+		if($status == "")
+		{		
+		  switch($type_employee){
+			case UserHelper::ADMIN:
+			$model = Task::model()->findAll(array('order'=>'id_group'));
+			break;
+			case UserHelper::EMPLOYER:
+			$model = Task::model()->findAll(array('order'=>'id_group'));
+			break;
+			case UserHelper::CONTRACTOR:
+			$model = Task::model()->findAll(array('order'=>'id_group'));//برگرداندن تسکهای مربوط به شرکتی که این پیمانکار در آن است
+			break;	
+			case UserHelper::EMPLOYEE:
+			$model = Task::model()->findAll(array('order'=>'id_group'));//برگرداندن تسکهای مربوط به شرکتی که این پیمانکار در آن است
+			break;	
+		  }
+		}
+		else{
+		  switch($type_employee){
 			case UserHelper::ADMIN:
 			$model = Task::model()->findAll(array('order'=>'id_group'));
 			break;
@@ -32,6 +53,7 @@ class TaskHelper
 			case UserHelper::EMPLOYEE:
 			$model = Task::model()->findAll(array('order'=>'id_group'));//برگرداندن تسکهای مربوط به شرکتی که این پیمانکار در آن است
 			break;	
+		  }
 		}
 		return $model;
 	}

@@ -29,7 +29,6 @@
                     </ul>
 					 <div class="tab-content">
 					    <div class="tab-pane cont active" id="home">
-						    <h3 class="hthin">اطلاعات اولیه</h3>
 						    <div class="form-group">
                                 <?php echo $form->labelEx($model, 'title', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">

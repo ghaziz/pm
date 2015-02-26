@@ -80,6 +80,14 @@ class CompanyController extends Controller
         }
     }
 
+    public function actionInfo(){
+        RoleHelper::checkAccessControl('company','view',$this);
+        if (isset($_GET['id'])) {
+            $model = Company::model()->findByPk($_GET['id']);
+        }
+        $this->renderPartial('info', array('model' => $model, false, true));
+    }
+
     public function actionDel()
     {
         if (isset($_POST['id'])) {

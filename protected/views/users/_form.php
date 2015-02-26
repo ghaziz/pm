@@ -1,6 +1,6 @@
 <?php
-/* @var $this CompanyController */
-/* @var $model Company */
+/* @var $this UsersController */
+/* @var $model Users */
 /* @var $form CActiveForm */
 $permissionHiddenControl = '';
 if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
@@ -52,7 +52,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                             <div class="form-group">
                                 <?php echo $form->label($model, 'password', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">
-                                    <?php echo $form->textField($model, 'password', array('class' => 'form-control')); ?>
+                                    <?php echo $form->passwordField($model, 'password', array('class' => 'form-control')); ?>
                                 </div>
                                 <?php echo $form->error($model, 'password', array('class' => 'col-sm-3 control-label')); ?>
                             </div>
@@ -104,7 +104,15 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                             <div class="form-group">
                                 <?php echo $form->label($model, 'type_employee', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">
-                                    <?php echo $form->dropDownList($model, 'type_employee', CompanyHelper::getTypeOfEmployee(), array('class' => 'form-control')); ?>
+
+                                    <?php
+                                    if($id == 'user-new-form'){
+                                    $list = CompanyHelper::getTypeOfEmployee();
+
+                                    }else{
+                                        $list = CompanyHelper::getTypeOfEmployee($model->type_employee,true);
+                                    }
+                                    echo $form->dropDownList($model, 'type_employee',$list , array('class' => 'form-control')); ?>
                                 </div>
                                 <?php echo $form->error($model, 'type_employee', array('class' => 'col-sm-3 control-label')); ?>
                             </div>

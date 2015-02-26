@@ -35,7 +35,9 @@
                 <td><?php echo $value; ?></td>
             <?php }?>
                 <td>
+                    <a title="اطلاعات کامل شرکت" href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('company/info',array('id'=>$company->id))?>')"><i class="fa fa-eye"></i></a>
                     <a title="ویرایش" href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('company/edit',array('id'=>$company->id))?>')"><i class="fa fa-edit"></i></a>
+                    <a href="" onclick="confirmDelete('<?php echo $this->createUrl('company/del')?>','<?php echo $company->id?>','u')" title="حذف شرکت"><i class="fa fa-times"></i></a>
                 </td>
                 </tr><?php } ?>
             </tbody>

@@ -26,7 +26,7 @@ class CompanyHelper
         return $types[$index];
     }
 
-    public static function getTypeOfEmployee($index = null)
+    public static function getTypeOfEmployee($index = null,$returnArray = false)
     {
         $typeOfCurrentUser = Yii::app()->user->typeOfUser;
         switch($typeOfCurrentUser){
@@ -41,6 +41,9 @@ class CompanyHelper
             case UserHelper::CONTRACTOR:
                 $types[UserHelper::EMPLOYEE] = 'کارمند';
                 break;
+            default:
+                $types = array();
+
         }
         if ($index == null) {
             return $types;
@@ -49,6 +52,8 @@ class CompanyHelper
             $types[UserHelper::EMPLOYER] = 'کارفرما';
             $types[UserHelper::CONTRACTOR] = 'پیمانگار';
             $types[UserHelper::ADMIN] = 'مدیریت سایت';
+            if($returnArray)
+            return array($index=>$types[$index]);
             return $types[$index];
         }
 
@@ -66,13 +71,10 @@ class CompanyHelper
         }else{return $company->title;}
     }
 
-    //this return the model that different for any user-permission-used in company-index
-    /* edited by ebrahim 1.1 */
     public static function getModel()
     {
         $model = array();
-        $user = Users::model()->findByPk(Yii::app()->user->id);
-        $type_employee = $user->type_employee;
+        $type_employee = Yii::app()->user->typeOfUser;
 
         switch($type_employee){
             case UserHelper::ADMIN:
@@ -82,13 +84,19 @@ class CompanyHelper
                 $model = Company::model()->findAll(array('order'=>'time'));
                 break;
             case UserHelper::CONTRACTOR:
-                $model = Company::model()->findAll("id=:id", array(':id'=>$user->id_company));
+                $model = Company::model()->findAll("id=:id", array(':id'=>Yii::app()->user->company));
                 break;
             case UserHelper::EMPLOYEE:
-                $model = Company::model()->findAll("id=:id", array(':id'=>$user->id_company));
+                $model = Company::model()->findAll("id=:id", array(':id'=>Yii::app()->user->company));
                 break;
         }
         if($model==null)return array();
         return $model;
+    }
+
+    public static function getCompanyOfUser($id)
+    {
+        $user = Users::model()->findByPk($id);
+        return $user->id_company;
     }
 }

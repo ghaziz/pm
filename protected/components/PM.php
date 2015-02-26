@@ -58,21 +58,33 @@ class PM
     public static function getCompaniesList()
     {
         $companies = array();
-        $models = Company::model()->findAll();
-        foreach ($models as $model) {
+        if(Yii::app()->user->typeOfUser == UserHelper::ADMIN){
+            $models = Company::model()->findAll();
+            foreach ($models as $model) {
+                $companies[$model['id']] = $model['title'];
+            }
+        }else{
+            $model = Company::model()->findByPk(Yii::app()->user->company);
             $companies[$model['id']] = $model['title'];
         }
         return $companies;
-
     }
 
     //list of project
     public static function getProjecsList()
     {
         $projects = array();
-        $models = Project::model()->findAll();
-        foreach ($models as $model) {
-            $projects[$model['id']] = $model['title'];
+        if(Yii::app()->user->typeOfUser == UserHelper::ADMIN){
+            $models = Project::model()->findAll();
+            foreach ($models as $model) {
+                $projects[$model['id']] = $model['title'];
+            }
+        }else{
+            $companyModel = Company::model()->findByPk(Yii::app()->user->company);
+            $models = $companyModel->projects;
+            foreach ($models as $model) {
+                $projects[$model['id']] = $model['title'];
+            }
         }
         return $projects;
 
@@ -134,43 +146,9 @@ class PM
     //important! remain days of projects and tasks
     public static function remain_days($start, $end)
     {
-//        $day = 0;
-//        $month = 0;
-//        $year = 0;
-//        $tot = 0;
-//        $end_year=PM::convert(Yii::app()->jdate->date('y', $end));
-//        $first_year=PM::convert(Yii::app()->jdate->date('y', $start));
-//        $year=(($end_year - $first_year)*12) - 1;
-//        $end_month=PM::convert(Yii::app()->jdate->date('m', $end));
-//        $first_month=PM::convert(Yii::app()->jdate->date('m', $start));
-//        $end_day=PM::convert(Yii::app()->jdate->date('d', $end));
-//        $first_day=PM::convert(Yii::app()->jdate->date('d', $start));
-//        if($end_month >= $first_month)
-//        {
-//            $month=$end_month- $first_month;
-//            $tot=$year + $month;
-//        }
-//        if($end_month < $first_month)
-//        {
-//            $month=abs($end_month- $first_month);
-//            $tot=$year - $month;
-//        }
-//        if($end_day >= $first_day)
-//        {
-//            $day=$end_day - $first_day;
-//        }
-//        if($end_day < $first_day)
-//        {
-//            $month = $month - 1;
-//            $day=(30 -$end_day) + $first_day;
-//        }
-//
-//
-//        return $tot."ماه "."و".$day."روز";
-        $remainTime = abs($end - $start);
-        $month = Yii::app()->jdate->date('m', $remainTime);
-        $day = Yii::app()->jdate->date('d', $remainTime);
-        return $month . "ماه " . "و" . $day . "روز";
+        if($start>$end){return 'اتمام!';}
+        $remainDay = ($end - $start)/86400;
+        return ceil($remainDay.' روز');
     }
 
     public static function getAttachmentPath()

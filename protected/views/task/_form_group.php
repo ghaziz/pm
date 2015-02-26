@@ -6,7 +6,7 @@
         // controller action is handling ajax validation correctly.
         // See class documentation of CActiveForm for details on this,
         // you need to use the performAjaxValidation()-method described there.
-        'enableAjaxValidation' => true,
+        'enableAjaxValidation' => false,
 
        )); ?>
 		

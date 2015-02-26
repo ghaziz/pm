@@ -1,677 +1,224 @@
-2015/02/24 06:18:22 [error] [php] Missing argument 1 for Log::log(), called in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php on line 37 and defined (C:\xampp\php\pear\Log.php:247)
+2015/02/26 13:35:24 [error] [php] Array to string conversion (C:\xampp\htdocs\pms\pm\protected\views\users\index.php:39)
 Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionIndex()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#7 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/index
-in C:\xampp\php\pear\Log.php (247)
-in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php (37)
-in C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php (21)
-2015/02/24 06:19:57 [error] [php] Missing argument 1 for Log::log(), called in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php on line 37 and defined (C:\xampp\php\pear\Log.php:247)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionIndex()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#7 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/index
-in C:\xampp\php\pear\Log.php (247)
-in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php (37)
-in C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php (21)
-2015/02/24 06:20:03 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\pms\pm\protected\components\PM.php:92)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#2 C:\xampp\htdocs\pms\pm\protected\views\project\new.php(2): ProjectController->renderPartial()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#6 C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php(80): ProjectController->renderPartial()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionNew()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/new
-in C:\xampp\htdocs\pms\pm\protected\components\PM.php (92)
-in C:\xampp\htdocs\pms\pm\protected\views\project\_form.php (78)
-in C:\xampp\htdocs\pms\pm\protected\views\project\new.php (2)
-2015/02/24 06:21:17 [error] [php] Missing argument 1 for Log::log(), called in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php on line 37 and defined (C:\xampp\php\pear\Log.php:247)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionIndex()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#7 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/index
-in C:\xampp\php\pear\Log.php (247)
-in C:\xampp\htdocs\pms\pm\protected\components\Helper\LogHelper.php (37)
-in C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php (21)
-2015/02/24 19:45:44 [error] [php] Undefined variable: model (C:\xampp\htdocs\pms\pm\protected\views\company\index.php:22)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): CompanyController->renderFile()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): CompanyController->renderPartial()
-#2 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(23): CompanyController->render()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): UsersController->renderPartial()
+#2 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(9): UsersController->render()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
 #4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CompanyController->runAction()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CompanyController->runActionWithFilters()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CompanyController->run()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=company/index
-in C:\xampp\htdocs\pms\pm\protected\views\company\index.php (22)
-in C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php (23)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 19:45:47 [error] [php] Undefined variable: model (C:\xampp\htdocs\pms\pm\protected\views\company\index.php:22)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): CompanyController->renderFile()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): CompanyController->renderPartial()
-#2 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(23): CompanyController->render()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CompanyController->runAction()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CompanyController->runActionWithFilters()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CompanyController->run()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=company/index
-in C:\xampp\htdocs\pms\pm\protected\views\company\index.php (22)
-in C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php (23)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 19:46:02 [error] [php] Undefined variable: model (C:\xampp\htdocs\pms\pm\protected\views\company\index.php:22)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): CompanyController->renderFile()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): CompanyController->renderPartial()
-#2 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(23): CompanyController->render()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CompanyController->runAction()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CompanyController->runActionWithFilters()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CompanyController->run()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=company/index
-in C:\xampp\htdocs\pms\pm\protected\views\company\index.php (22)
-in C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php (23)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 19:48:29 [error] [php] Undefined variable: model (C:\xampp\htdocs\pms\pm\protected\views\company\index.php:22)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): CompanyController->renderFile()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): CompanyController->renderPartial()
-#2 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(23): CompanyController->render()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CompanyController->runAction()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CompanyController->runActionWithFilters()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CompanyController->run()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=company/index
-in C:\xampp\htdocs\pms\pm\protected\views\company\index.php (22)
-in C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php (23)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 19:48:33 [error] [exception.CException] exception 'CException' with message 'CompanyController cannot find the requested view "/site/noaccess".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(64): CController->renderPartial('/site/noaccess', NULL, false, true)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionNew()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('new')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/new')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/new
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:00:01 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='1'' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `roles` `t` WHERE user_id=:uid and =:field.
-in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php (72)
-in C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php (35)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:00:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='1'' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `roles` `t` WHERE user_id=:uid and =:field' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\CDbCommand.php:543
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\ar\CActiveRecord.php(1606): CDbCommand->queryScalar()
-#2 C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php(72): CActiveRecord->count('user_id=:uid an...', Array)
-#3 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(35): RoleHelper::checkAccessControl('company', 'insert', Object(CompanyController))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionNew()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('new')
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/new')
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#11 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#12 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/new
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:03:56 [error] [exception.CException] exception 'CException' with message 'CompanyController cannot find the requested view "/site/noaccess".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php(78): CController->renderPartial('/site/noaccess', NULL, false, true)
-#1 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(35): RoleHelper::checkAccessControl('company', 'insert', Object(CompanyController))
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionNew()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('new')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/new')
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#10 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/new
-HTTP_REFERER=http://127.0.0.1/pms/pm/?XDEBUG_SESSION_START=12983
----
-2015/02/24 20:03:58 [error] [exception.CException] exception 'CException' with message 'CompanyController cannot find the requested view "/site/noaccess".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php(78): CController->renderPartial('/site/noaccess', NULL, false, true)
-#1 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(35): RoleHelper::checkAccessControl('company', 'insert', Object(CompanyController))
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionNew()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('new')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/new')
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#10 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/new
-HTTP_REFERER=http://127.0.0.1/pms/pm/?XDEBUG_SESSION_START=12983
----
-2015/02/24 20:04:10 [error] [exception.CException] exception 'CException' with message 'CompanyController cannot find the requested view "/site/noaccess".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:878
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php(78): CController->renderPartial('/site/noaccess', NULL, false, true)
-#1 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(35): RoleHelper::checkAccessControl('company', 'insert', Object(CompanyController))
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionNew()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('new')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/new')
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#9 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#10 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/new
-HTTP_REFERER=http://127.0.0.1/pms/pm/?XDEBUG_SESSION_START=12983
----
-2015/02/24 20:31:36 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(11): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/?XDEBUG_SESSION_START=17168
----
-2015/02/24 20:35:45 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:36:23 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:37:00 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:37:03 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:38:32 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:38:46 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:39:15 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
----
-2015/02/24 20:39:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "attachments".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(270): CController->missingAction('attachments')
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('attachments')
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/attachm...')
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/attachments
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:40:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "attachments".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(270): CController->missingAction('attachments')
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('attachments')
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/attachm...')
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/attachments
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:40:07 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/attachments
----
-2015/02/24 20:40:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "attachments".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(270): CController->missingAction('attachments')
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('attachments')
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/attachm...')
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/attachments
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:43:01 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/attachments
----
-2015/02/24 20:43:19 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:43:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "attachments".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:483
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(270): CController->missingAction('attachments')
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('attachments')
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/attachm...')
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#4 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#5 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/attachments
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:44:12 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/attachments
----
-2015/02/24 20:44:22 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\CompanyController.php(10): RoleHelper::checkAccessControl('company', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): CompanyController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=company/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:45:11 [error] [exception.CHttpException.503] exception 'CHttpException' with message 'شما اجازه دسترسی به این قسمت را ندارید!' in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php:83
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php(9): RoleHelper::checkAccessControl('task', 'view', NULL, true, false)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): TaskController->actionIndex()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('task/index')
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#8 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#9 {main}
-REQUEST_URI=/pms/pm/index.php?r=task/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=company/index
----
-2015/02/24 20:45:31 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php:11)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): TaskController->runAction()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): TaskController->runActionWithFilters()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): TaskController->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#5 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=task/index
-in C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php (11)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:46:06 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php:11)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): TaskController->runAction()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): TaskController->runActionWithFilters()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): TaskController->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#5 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=task/index
-in C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php (11)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:46:10 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php:11)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): TaskController->runAction()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): TaskController->runActionWithFilters()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): TaskController->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#5 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=task/index
-in C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php (11)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:46:26 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php:11)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): TaskController->runAction()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): TaskController->runActionWithFilters()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): TaskController->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#5 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=task/index
-in C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php (11)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:46:52 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php:11)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): TaskController->runAction()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): TaskController->runActionWithFilters()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): TaskController->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#5 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=task/index
-in C:\xampp\htdocs\pms\pm\protected\controllers\TaskController.php (11)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 20:50:13 [error] [php] Undefined variable: message (C:\xampp\htdocs\pms\pm\protected\views\project\index.php:2)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(782): ProjectController->renderPartial()
-#2 C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php(19): ProjectController->render()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionIndex()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#10 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/index
-in C:\xampp\htdocs\pms\pm\protected\views\project\index.php (2)
-in C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php (19)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/24 21:04:10 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\pms\pm\protected\components\PM.php:92)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#2 C:\xampp\htdocs\pms\pm\protected\views\project\new.php(2): ProjectController->renderPartial()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#6 C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php(60): ProjectController->renderPartial()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionNew()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/new
-in C:\xampp\htdocs\pms\pm\protected\components\PM.php (92)
-in C:\xampp\htdocs\pms\pm\protected\views\project\_form.php (78)
-in C:\xampp\htdocs\pms\pm\protected\views\project\new.php (2)
-2015/02/24 21:04:48 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\pms\pm\protected\components\PM.php:92)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#2 C:\xampp\htdocs\pms\pm\protected\views\project\new.php(2): ProjectController->renderPartial()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): ProjectController->renderInternal()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): ProjectController->renderFile()
-#6 C:\xampp\htdocs\pms\pm\protected\controllers\ProjectController.php(60): ProjectController->renderPartial()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): ProjectController->actionNew()
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): ProjectController->runAction()
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): ProjectController->runActionWithFilters()
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): ProjectController->run()
-#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#14 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=project/new
-in C:\xampp\htdocs\pms\pm\protected\components\PM.php (92)
-in C:\xampp\htdocs\pms\pm\protected\views\project\_form.php (78)
-in C:\xampp\htdocs\pms\pm\protected\views\project\new.php (2)
-2015/02/25 06:57:50 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\pms\pm\protected\components\WebUser.php:48)
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\views\layouts\main.php(101): WebUser->__get()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(214): CContentDecorator->run()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(308): SiteController->endWidget()
-#8 C:\xampp\htdocs\pms\pm\protected\views\layouts\column1.php(6): SiteController->endContent()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(784): SiteController->renderFile()
-#12 C:\xampp\htdocs\pms\pm\protected\controllers\SiteController.php(32): SiteController->render()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): SiteController->runAction()
-#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): SiteController->run()
-#18 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#20 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php
-in C:\xampp\htdocs\pms\pm\protected\components\WebUser.php (48)
-in C:\xampp\htdocs\pms\pm\protected\views\layouts\main.php (101)
-in C:\xampp\htdocs\pms\pm\protected\views\layouts\column1.php (6)
-2015/02/25 06:58:11 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\pms\pm\protected\components\WebUser.php:48)
-Stack trace:
-#0 C:\xampp\htdocs\pms\pm\protected\views\layouts\main.php(101): WebUser->__get()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(214): CContentDecorator->run()
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(308): SiteController->endWidget()
-#8 C:\xampp\htdocs\pms\pm\protected\views\layouts\column1.php(6): SiteController->endContent()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): SiteController->renderInternal()
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(784): SiteController->renderFile()
-#12 C:\xampp\htdocs\pms\pm\protected\controllers\SiteController.php(32): SiteController->render()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
-#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
-#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(286): SiteController->runAction()
-#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): SiteController->run()
-#18 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#19 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#20 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php
-in C:\xampp\htdocs\pms\pm\protected\components\WebUser.php (48)
-in C:\xampp\htdocs\pms\pm\protected\views\layouts\main.php (101)
-in C:\xampp\htdocs\pms\pm\protected\views\layouts\column1.php (6)
-2015/02/25 07:06:43 [error] [php] array_map(): Argument #2 should be an array (C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\auth\CAccessControlFilter.php:115)
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
-#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): SiteController->runActionWithFilters()
-#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): SiteController->run()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#7 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
-REQUEST_URI=/pms/pm/index.php?r=site/login
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/25 11:25:28 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `users` `t` WHERE user_id=:id LIMIT 1.
-in C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php (41)
-in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (7)
-in C:\xampp\htdocs\pms\pm\index.php (13)
-2015/02/25 11:25:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'user_id' in 'where clause'. The SQL statement executed was: SELECT * FROM `users` `t` WHERE user_id=:id LIMIT 1' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\CDbCommand.php:543
-Stack trace:
-#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
-#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\ar\CActiveRecord.php(1356): CDbCommand->queryRow()
-#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\db\ar\CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
-#3 C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php(41): CActiveRecord->find('user_id=:id', Array)
-#4 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(7): UserHelper::getModel()
-#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionIndex()
-#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
-#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('index')
-#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('users/index')
-#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
-#17 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
-#18 {main}
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
 REQUEST_URI=/pms/pm/index.php?r=users/index
-HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=task/index
+in C:\xampp\htdocs\pms\pm\protected\views\users\index.php (39)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (9)
+in C:\xampp\htdocs\pms\pm\index.php (13)
+2015/02/26 13:45:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "info".' in C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(270): CController->missingAction('info')
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): CController->run('info')
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController('users/info')
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\pms\pm\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=9
+HTTP_REFERER=http://127.0.0.1/pms/pm/index.php?r=users/index
 ---
+2015/02/26 14:00:01 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php (57)
+in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php (93)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (121)
+2015/02/26 14:00:15 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php:57)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\components\Helper\UserHelper.php (57)
+in C:\xampp\htdocs\pms\pm\protected\components\Helper\RoleHelper.php (93)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (121)
+2015/02/26 14:02:42 [error] [php] Illegal string offset 'src' (C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\helpers\CHtml.php:455)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#2 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#6 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (10)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)
+2015/02/26 14:02:54 [error] [php] Illegal string offset 'src' (C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\helpers\CHtml.php:455)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#2 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#6 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (10)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)
+2015/02/26 14:06:27 [error] [php] Illegal string offset 'src' (C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\helpers\CHtml.php:455)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#1 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#2 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#5 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#6 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (10)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)
+2015/02/26 14:08:23 [error] [php] Undefined variable: username (C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#5 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (43)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)
+2015/02/26 14:08:54 [error] [php] Undefined variable: username (C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#5 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (43)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)
+2015/02/26 14:09:06 [error] [php] Undefined variable: email (C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php:56)
+Stack trace:
+#0 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\pms\pm\protected\views\users\info.php(2): UsersController->renderPartial()
+#2 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CBaseController.php(95): UsersController->renderInternal()
+#4 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(869): UsersController->renderFile()
+#5 C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php(125): UsersController->renderPartial()
+#6 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\actions\CInlineAction.php(49): UsersController->actionInfo()
+#7 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#9 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#12 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#15 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(282): UsersController->run()
+#16 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\pms\yii-1.1.16.bca042\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\pms\pm\index.php(13): CWebApplication->run()
+REQUEST_URI=/pms/pm/index.php?r=users/info&id=14
+in C:\xampp\htdocs\pms\pm\protected\views\users\info_show.php (56)
+in C:\xampp\htdocs\pms\pm\protected\views\users\info.php (2)
+in C:\xampp\htdocs\pms\pm\protected\controllers\UsersController.php (125)

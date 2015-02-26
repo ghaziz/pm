@@ -37,18 +37,24 @@ class UserHelper
             case UserHelper::ADMIN:
                 $model = Users::model()->findAll();
                 break;
-            case UserHelper::EMPLOYER:
+            case UserHelper::EMPLOYEE:
                 $model = Users::model()->find("id=:id", array(':id'=>Yii::app()->user->id));
                 break;
             case UserHelper::CONTRACTOR:
-                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->user->company));
                 break;
-            case UserHelper::EMPLOYEE:
-                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+            case UserHelper::EMPLOYER:
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->user->company));
                 break;
         }
         if($model==null){return array();};
         return $model;
+    }
+
+    public static function getTypeOfUser($id)
+    {
+        $user = Users::model()->findByPk($id);
+        return $user->type_employee;
     }
 
 

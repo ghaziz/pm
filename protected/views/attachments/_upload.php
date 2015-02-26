@@ -19,7 +19,7 @@
                 </tr></thead>
                 <tbody></tbody>
             </table>
-            <h5>ددر انتظار</h5>
+            <h5>در انتظار</h5>
             <ol class="filelist queue">
             </ol>
         </div>
@@ -31,5 +31,5 @@
 </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-flat md-close" data-dismiss="modal">انصراف</button>
+        <button type="button" class="btn btn-default btn-flat md-close btn-block" data-dismiss="modal">بستن</button>
     </div>

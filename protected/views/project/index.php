@@ -3,9 +3,49 @@
         <h3>لسیت پروژه ها</h3>
     </div>
 	<div class="content">
-		<table>
+	<!--1.0.2 added filter-->
+      <div class="form-group">
+          <div class="col-sm-6">
+                  <input type="search" class="light-table-filter form-control" data-table="order-table" placeholder="جستجو کنید..." style="margin-right:-12px;">
+           </div>
+		   <div class="col-sm-3">
+                  	<div class="btn-group">
+						 <button type="button" class="btn btn-default">فیلتر براساس</button>
+						 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+						  <span class="caret"></span>
+						  <span class="sr-only">تغییر وضعیت منوی کشویی</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('status' => ProjectHelper::OPEN)); ?>">پروژه های باز</a></li>
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('status' => ProjectHelper::COMPLETED)); ?>">پروژه های بسته</a></li>
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('status' => ProjectHelper::ON_HOLD )); ?>">پروژه های متوقف شده</a></li>
+							 <li><a href="<?php echo Yii::app()->createUrl('project/index',array('status' => ProjectHelper::CANCELLED)); ?>">پروژه های کنسل شده</a></li>
+							 <li class="divider"></li>
+							<li><a href="<?php echo Yii::app()->createUrl('project/index'); ?>">نمایش همه ی پروژه ها</a></li>
+						  </ul>
+					</div>	
+           </div>
+		   <div class="col-sm-3">
+                  	<div class="btn-group">
+						 <button type="button" class="btn btn-default">مرتب سازی براساس</button>
+						 <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+						  <span class="caret"></span>
+						  <span class="sr-only">تغییر وضعیت منوی کشویی</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('order' => 'time')); ?>">زمان</a></li>
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('order' => 'id_company')); ?>">شرکت</a></li>
+						     <li><a href="<?php echo Yii::app()->createUrl('project/index',array('order' => 'price' )); ?>">هزینه</a></li>
+							 <li><a href="<?php echo Yii::app()->createUrl('project/index',array('order' => 'percent_prog' )); ?>">درصد پیشرفت</a></li>
+							 <li class="divider"></li>
+							<li><a href="<?php echo Yii::app()->createUrl('project/index'); ?>">نمایش همه ی پروژه ها</a></li>
+						  </ul>
+					</div>	
+           </div>
+        </div>
+		<table class="order-table" name="order-table">
             <thead>
-            <tr>
+            <tr class="text-center primary-emphasis">
                 <th >کد پروژه</th>
                 <th >عنوان</th>
                 <th>تاریخ شروع</th>
@@ -28,6 +68,7 @@
 							 foreach($printable as $field){
 								$value = ' ';
 								 switch($field){
+									case 'title' : $value = "<a href='".Yii::app()->createUrl('task/projecttask',array('id' => $project->id, 'title' => $project->title))."' title='مشاهده ی تسک های پروژه'>".$project->$field."</a>";break;
 									case 'start_time' : $value = Yii::app()->jdate->date('Y/m/d',$project->$field);break;
 									case 'end_time' : $value = Yii::app()->jdate->date('Y/m/d',$project->$field);break;
 									case 'status' : 
@@ -45,8 +86,11 @@
 								 ?>
 								 <td><?php echo $value; ?></td>
 								 
-							<?php } ?>
-							<td><?php echo $project->end_time - $project->start_time; ?></td>
+							<?php  
+								}
+								$month=PM::remain_days(time(),$project->end_time);
+							?>
+							<td><?php echo  $month; ?></td>
 							<td></td>
 							<td>
 								<a title="اظلاعات کامل پروژه" href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('project/info',array('id'=>$project->id))?>')"><i class="fa fa-eye"></i></a>

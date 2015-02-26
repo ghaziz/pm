@@ -83,7 +83,7 @@ class RoleHelper
         if($typeOfUser == UserHelper::ADMIN){return true;}
 
         if ($action == 'new') {
-            $result = $typeOfUser != UserHelper::EMPLOYER;
+            $result = $typeOfUser != UserHelper::EMPLOYEE;
         }
         if ($action == 'edit') {
             if (Yii::app()->user->id == $extraField) {
@@ -101,6 +101,7 @@ class RoleHelper
         };
         if($action == 'create-this-type-of-user'){
             $typeOfUser = Yii::app()->user->typeOfUser;
+            if($typeOfUser == $extraField) return true;
             if($typeOfUser == UserHelper::ADMIN) return true;
             if($typeOfUser == UserHelper::EMPLOYER &&  $extraField==UserHelper::CONTRACTOR)return true;
             if($typeOfUser == UserHelper::CONTRACTOR &&  $extraField==UserHelper::EMPLOYEE)return true;
@@ -109,8 +110,8 @@ class RoleHelper
 
         if($action == 'view-permission-tab'){
             $typeOfUser = Yii::app()->user->typeOfUser;
-            if($typeOfUser == UserHelper::ADMIN || $typeOfUser == UserHelper::EMPLOYEE ||$typeOfUser == UserHelper::CONTRACTOR )return true;
-            if($typeOfUser == UserHelper::EMPLOYER)$result = false;
+            if($typeOfUser == UserHelper::ADMIN || $typeOfUser == UserHelper::EMPLOYER ||$typeOfUser == UserHelper::CONTRACTOR )return true;
+            if($typeOfUser == UserHelper::EMPLOYEE)$result = false;
         }
 
         if($result) return true;

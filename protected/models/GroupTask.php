@@ -62,8 +62,8 @@ class GroupTask extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'Title',
-			'description' => 'Description',
+			'title' => 'نام',
+			'description' => 'توضیحات',
 			'time' => 'Time',
 			'user_id' => 'User',
 		);

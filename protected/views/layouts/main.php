@@ -1,4 +1,9 @@
-<?php /* @var $this Controller */ ?>
+<?php /* @var $this Controller */
+$permissionHiddenControl = '';
+if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
+    $permissionHiddenControl = 'hide';
+}
+?>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -60,25 +65,36 @@
                         <li><a href="#"><i class="fa fa-smile-o"></i><span>شرکت ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('company/index'); ?>">لیست شرکت ها</a></li>
+								
+							<?php $user = Users::model()->findByPk(Yii::app()->user->id);
+							if($user->type_employee == UserHelper::ADMIN || $user->type_employee == UserHelper::EMPLOYER)
+							{ ?>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('company/new')?>')">ایجاد</a></li>
+							<?php } ?>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>پروژه ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('project/index'); ?>">لیست پروژه ها</a></li>
+								
+							<?php if($user->type_employee == UserHelper::ADMIN || $user->type_employee == UserHelper::EMPLOYER)
+							{ ?>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('project/new')?>')">ایجاد</a></li>
+							<?php } ?>
+							
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>تسک ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('task/index'); ?>">لیست تسک ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new')?>')">ایجاد</a></li>
+								<li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new_group')?>')">ایجاد گروه</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>کاربران</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('users/index'); ?>">لیست کاربران</a></li>
-                                <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('users/new')?>')">ایجاد</a></li>
+                                <li><a href="#" class="md-trigger <?php echo $permissionHiddenControl; ?>" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('users/new')?>')">ایجاد</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -204,11 +220,14 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/behaviour/core.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.icheck/icheck.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.niftymodals/js/jquery.modalEffects.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/lib/persian-date.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/dist/js/persian-datepicker-0.3.6.min.js"></script>
 
 <!--( Bootstrap core JavaScript )-->
 <!--<script src="--><?php //echo Yii::app()->request->baseUrl; ?><!--/js/behaviour/voice-commands.js"></script>-->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/app.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/table-filter.js"></script>
 
 </body>
 </html>
