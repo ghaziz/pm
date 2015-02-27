@@ -58,7 +58,7 @@ class PM
     public static function getCompaniesList()
     {
         $companies = array();
-        if(Yii::app()->user->typeOfUser == UserHelper::ADMIN){
+        if(Yii::app()->user->typeOfUser == UserHelper::ADMIN || Yii::app()->user->typeOfUser == UserHelper::EMPLOYER){
             $models = Company::model()->findAll();
             foreach ($models as $model) {
                 $companies[$model['id']] = $model['title'];
@@ -104,17 +104,20 @@ class PM
 
     public static function getEmployersList()//karfarma ha + ADMIN baraie taein karfama dar sabte proje
     {
-        $employers = array();
 
-        $amin = Users::model()->findAll("type_employee=:type", array(':type' => UserHelper::ADMIN));
-        if ($amin != null) {
-            $employers[$amin[0]['id']] = $amin[0]['name'] . " " . $amin[0]['family'] . "(ادمین)";
+        $typeOfUser = Yii::app()->user->typeOfUser;
+        $employers = array();
+        $models = array();
+        if($typeOfUser==UserHelper::ADMIN){
+            $models = Users::model()->findAll(array(
+                'condition' => 'type_employee = :type',
+                'params' => array(':type' => UserHelper::EMPLOYER)
+            ));
+        }
+        if($typeOfUser==UserHelper::EMPLOYER){
+            $models = array(Yii::app()->user->model);
         }
 
-        $models = Users::model()->findAll(array(
-            'condition' => 'type_employee = :type',
-            'params' => array(':type' => UserHelper::EMPLOYER)
-        ));
         foreach ($models as $model) {
             $employers[$model['id']] = $model['name'] . " " . $model['family'];
         }

@@ -55,5 +55,19 @@ class WebUser extends CWebUser {
         if($user==null) return -1;
         return $user->id_company;
     }
+
+    public function getCompaniesModel()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return array();
+        return array($user->idCompany);
+    }
+
+    public function getModel()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return null;
+        return $user;
+    }
 }
 ?>

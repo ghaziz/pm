@@ -40,7 +40,7 @@ class TaskController extends Controller
         if (isset($_POST['Task'])) {
             $model->attributes = $_POST['Task'];
             $model->time = time();
-            $type_user = Yii::app()->user->name;
+            $type_user = Yii::app()->user->typeOfUser;
             if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
                 $model->confirm_status = TaskHelper::CONFIRMED;
             } else {

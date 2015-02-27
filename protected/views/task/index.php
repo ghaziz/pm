@@ -78,7 +78,8 @@
 									break;
 									case 'id_project' : $value = PM::getProjectName($task->$field);break;
 									case 'id_group' : $value = PM::getGroupName($task->$field);break;
-									case 'percent_prog' : $value = $task->$field ? $task->$field."%" : 'نامشخص';break;
+                                    case 'percent_prog' : $value ='<div class=\'progress\'><div class=\'progress-bar progress-bar-success\' style=\'width:'.$task->$field.'%\'>'.$task->$field.'%</div></div>';break;
+                                        break;
 									default      : $value = $task->$field;
 								}
 							?>

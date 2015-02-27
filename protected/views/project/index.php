@@ -79,7 +79,7 @@
 									break;
 									case 'id_company' : $value = PM::getCompanytitle($project->$field);break;
 									case 'user_id' : $value = PM::getUserName($project->$field);break;
-									case 'percent_prog' : $value = $project->$field ? $project->$field."%" : 'نامشخص';break;
+                                     case 'percent_prog' : $value ='<div class=\'progress\'><div class=\'progress-bar progress-bar-success\' style=\'width:'.$project->$field.'%\'>'.$project->$field.'%</div></div>';break;
 									case 'price' : $value = $project->$field ? $project->$field."ریال" : 'نامشخص';break;
 									default      : $value = $project->$field;							
 								 }

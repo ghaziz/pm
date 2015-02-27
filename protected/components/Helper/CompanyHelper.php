@@ -8,9 +8,10 @@
  */
 class CompanyHelper
 {
-    public static function getChiefOfCompany($id)
+    public static function getChiefOfCompany($companyId)
     {
-        $model = Users::model()->findByPk($id);
+
+        $model = Users::model()->find('type_employee=:te and id_company=:ic',array(':te'=>UserHelper::CONTRACTOR,':ic'=>$companyId));
         if($model!=null){
         return $model->name.' '.$model->family;
         }
@@ -81,6 +82,13 @@ class CompanyHelper
                 $model = Company::model()->findAll(array('order'=>'time'));
                 break;
             case UserHelper::EMPLOYER:
+//            case UserHelper::EMPLOYER:
+//                $model = Company::model()->findAll(array('condition'=>'user_id=:user_id','order'=>'time',
+//                    'params'=>array(':user_id'=>Yii::app()->user->id)));
+//                break;
+//            case UserHelper::CONTRACTOR:
+//                $model = Yii::app()->user->companiesModel;
+//                break;
                 $model = Company::model()->findAll(array('order'=>'time'));
                 break;
             case UserHelper::CONTRACTOR:

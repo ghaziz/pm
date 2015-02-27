@@ -27,7 +27,7 @@
                 $value = ' ';
                 switch($field){
                     case 'type'  : $value = CompanyHelper::getTypeOfCompany($company->$field);break;
-                    case 'chief' : $value = CompanyHelper::getChiefOfCompany($company->user_id);break;
+                    case 'chief' : $value = CompanyHelper::getChiefOfCompany($company->id);break;
                     case 'foundation_notice' : $value = CHtml::link('دانلود',$company->$field);break;
                     default      : $value = $company->$field;
                 }
