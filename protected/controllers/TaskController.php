@@ -62,31 +62,7 @@ class TaskController extends Controller
         $this->renderPartial('new', array('model' => $model, false, true));
     }
 
-    public function actionNew_group()
-    {
-        RoleHelper::checkAccessControl('task', 'insert', $this);
-        $model = new GroupTask;
 
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'group-new-form') {
-            echo CActiveForm::validate($model);
-            Yii::app()->end();
-        }
-
-        if (isset($_POST['GroupTask'])) {
-            $model->attributes = $_POST['GroupTask'];
-            $model->time = time();
-            $model->user_id = Yii::app()->user->id;
-
-            if ($model->validate()) {
-                if ($model->save(false)) {
-                    LogHelper::proccess(LogHelper::INSERT_GROUP, LogHelper::TASK, "گروه جدید اضافه شد");
-                }
-                $this->renderPartial('/site/success', null, false, true);
-                Yii::app()->end();
-            }
-        }
-        $this->renderPartial('new_group', array('model' => $model, false, true));
-    }
 
     public function actionEdit()
     {
@@ -158,6 +134,102 @@ class TaskController extends Controller
                 $model = Task::model()->findAll("id_project=:id", array(':id' => $_GET['id']));
             }
             $this->render('Projecttask', array('model' => $model, 'title' => $_GET['title'], 'message' => $message));
+        } else {
+            $message = "شما اجازه ی مشاهده ی تسک ها را ندارید";
+            $this->render('index', array('message' => $message));
+        }
+    }
+	
+	//v1.0.4
+	public function actionGrouplist()
+    {
+        if (!Yii::app()->user->isGuest) {
+		
+            RoleHelper::checkAccessControl('task', 'view', $this, true, false);
+
+            $model = GroupTask::model()->findAll(array('order'=>'time'));
+            $this->render('grouplist', array('model' => $model));
+            LogHelper::proccess(LogHelper::VIEW, LogHelper::TASK, "مشاهده ی گروه های تسک");
+
+        } else {
+            $this->redirect(array('site/login'));
+        }
+    }
+	
+	//v1.0.4
+    public function actionNew_group()
+    {
+        RoleHelper::checkAccessControl('task', 'insert', $this);
+        $model = new GroupTask;
+
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'group-new-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+
+        if (isset($_POST['GroupTask'])) {
+            $model->attributes = $_POST['GroupTask'];
+            $model->time = time();
+            $model->user_id = Yii::app()->user->id;
+
+            if ($model->validate()) {
+                if ($model->save(false)) {
+                    LogHelper::proccess(LogHelper::INSERT_GROUP, LogHelper::GROUP_TASK, "گروه جدید اضافه شد");
+                }
+                $this->renderPartial('/site/success', null, false, true);
+                Yii::app()->end();
+            }
+        }
+        $this->renderPartial('new_group', array('model' => $model, false, true));
+    }
+	//v1.0.4
+	public function actionEdit_group()
+    {
+		 RoleHelper::checkAccessControl('task', 'edit', $this);
+		 if (isset($_GET['id'])) {
+			$model = GroupTask::model()->findByPk($_GET['id']);
+			if (isset($_POST['GroupTask'])) {
+				$model->attributes = $_POST['GroupTask'];
+				$model->time = time();
+				if ($model->validate()) {
+				    if ($model->update(false)) {
+                        LogHelper::proccess(LogHelper::EDIT, LogHelper::GROUP_TASK, "گروه تسک ویرایش شد");
+                    }
+                    $this->renderPartial('/site/success', null, false, true);
+                    Yii::app()->end();
+				}
+			}
+		 $this->renderPartial('edit_group', array('model' => $model, false, true));
+		 }
+		 
+    }
+	//v1.0.4
+    public function actionDelgroup()
+    {
+        if (RoleHelper::checkAccessControl('task', 'delete')) {
+            if (isset($_POST['id'])) {
+                $id = $_POST['id'];
+                $task = GroupTask::model()->findByPk($id);
+                if ($task->delete()) {
+                    LogHelper::proccess(LogHelper::DELETE, LogHelper::GROUP_TASK, "گروه تسک حذف شد");
+                }
+                $this->renderPartial('/site/success', null, false, true);
+            }
+        } else {
+            $this->renderPartial('/site/noaccess', null, false, true);
+        }
+    }
+	//v1.0.4
+	public function actiongrouptask()
+    {
+        $message = "";
+        if (RoleHelper::checkAccessControl('task', 'view')) {
+            if (isset($_GET['id'])) {
+
+                $model = Task::model()->findAll("id_group=:id", array(':id' => $_GET['id']));
+            }
+			LogHelper::proccess(LogHelper::VIEW, LogHelper::GROUP_TASK, "تسک های گروه مشاهده شدند");
+            $this->render('grouptask', array('model' => $model, 'title' => $_GET['title'], 'message' => $message));
         } else {
             $message = "شما اجازه ی مشاهده ی تسک ها را ندارید";
             $this->render('index', array('message' => $message));

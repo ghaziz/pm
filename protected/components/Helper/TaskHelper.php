@@ -46,7 +46,7 @@ class TaskHelper
             $tasks = array();
 
             foreach($projects as $project){
-                $tasks = array_merge($tasks,$project->task);
+               $tasks = array_merge($tasks,$project->tasks);
             }
 			$model = $tasks;
 			break;

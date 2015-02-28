@@ -89,6 +89,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                 <li><a href="<?php echo $this->createUrl('task/index'); ?>">لیست تسک ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new')?>')">ایجاد</a></li>
 								<li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new_group')?>')">ایجاد گروه</a></li>
+								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">لیست گروه ها</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>کاربران</span></a>
@@ -118,11 +119,10 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                                                                             src="<?php echo Yii::app()->user->image; ?>"/><span><?php echo Yii::app()->user->name; ?></span>
                                 <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">حساب من</a></li>
-                                <li><a href="#">پروفایل</a></li>
-                                <li><a href="#">پیام ها</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('users/account')?>">حساب من</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('users/profile')?>">پروفایل</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo $this->createUrl('site/logout'); ?>">خروج</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('site/logout')?>">خروج</a></li>
                             </ul>
                         </li>
                     </ul>

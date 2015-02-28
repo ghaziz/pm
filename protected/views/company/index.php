@@ -3,9 +3,14 @@
         <h3>لیست کامل شرکت ها</h3>
     </div>
     <div class="content">
-        <table>
+	 <div class="form-group">
+          <div class="col-sm-6">
+                  <input type="search" class="light-table-filter form-control" data-table="order-table" placeholder="جستجو کنید..." style="margin-right:-12px;">
+           </div>
+	 </div>
+        <table class="order-table" name="order-table">
             <thead>
-            <tr>
+            <tr class="text-center primary-emphasis">
                 <th >نام شرکت</th>
                 <th>نوع شرکت</th>
                 <th>مدیر عامل</th>

@@ -216,7 +216,10 @@ pip-log.txt
 .mr.developer.cfg
 
 *.xml
+workspace.xml
 *.iml
 /.idea
 /assets/
 /attachments/
+*.xml
+.idea/workspace.xml
