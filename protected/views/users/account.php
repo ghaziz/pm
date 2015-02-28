@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <label class="col-sm-3 control-label">تغییر پسورد*</label>
                                 <div class="col-sm-6">
-									 <?php echo $form->textField($model, 'password', array('class' => 'form-control', 'placeholder'=>'تغییر رمز عبور')); ?>
+									 <?php echo $form->passwordField($model, 'password', array('class' => 'form-control', 'placeholder'=>'تغییر رمز عبور')); ?>
                                 </div>
                                 <?php echo $form->error($model, 'password', array('class' => 'col-sm-3 control-label')); ?>
                             </div>	

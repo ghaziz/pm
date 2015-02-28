@@ -2,7 +2,7 @@
 	    <?php $form = $this->beginWidget('CActiveForm', array(
 		 'id' => 'profile-form',
          'action'=>$this->createUrl('users/profile'),
-        'htmlOptions' => array('class' => 'form-horizontal group-border-dashed','validateOnSubmit'=>true ),
+        'htmlOptions' => array('class' => 'form-horizontal group-border-dashed','validateOnSubmit'=>true ,'enctype' => 'multipart/form-data'),
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.
         // See class documentation of CActiveForm for details on this,
@@ -48,7 +48,7 @@
                                 <?php echo $form->error($model, 'phone', array('class' => 'col-sm-3 control-label')); ?>
                             </div>	
                             <div class="form-group">
-                                <?php echo $form->labelEx($model, 'emial', array('class' => 'col-sm-3 control-label')); ?>
+                                <?php echo $form->labelEx($model, 'email', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">
                                     <?php echo $form->textField($model, 'email', array('class' => 'form-control')); ?>
                                 </div>
