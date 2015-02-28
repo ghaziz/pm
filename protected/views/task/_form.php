@@ -1,6 +1,7 @@
 <div class="md-content ">
 	    <?php $form = $this->beginWidget('CActiveForm', array(
-        'id' => 'task-new-form',
+        'id' => $id,
+        'action' => $action,
         'htmlOptions' => array('class' => 'form-horizontal','validateOnSubmit'=>true ),
         // Please note: When you enable ajax validation, make sure the corresponding
         // controller action is handling ajax validation correctly.

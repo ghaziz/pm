@@ -99,19 +99,19 @@ class TaskController extends Controller
                 $model->attributes = $_POST['Task'];
                 $model->time = time();
                 $type_user = Yii::app()->user->name;
-                if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
-                    $model->confirm_status = TaskHelper::CONFIRMED;
-                } else {
-                    $model->confirm_status = TaskHelper::NOT_CONFIRMED;
-                }
+//                if ($type_user == UserHelper::ADMIN || $type_user == UserHelper::EMPLOYER) {
+//                    $model->confirm_status = TaskHelper::CONFIRMED;
+//                } else {
+//                    $model->confirm_status = TaskHelper::NOT_CONFIRMED;
+//                }
 
                 if ($model->validate()) {
                     $model->start_time = PM::convertJalaliToGeorgian($model->start_time);
                     $model->end_time = PM::convertJalaliToGeorgian($model->end_time);
                     if ($model->update(false)) {
                         LogHelper::proccess(LogHelper::EDIT, LogHelper::TASK, "تسک ویرایش شد");
+                        $this->renderPartial('/site/success', null, false, true);
                     }
-                    $this->renderPartial('/site/success', null, false, true);
                     Yii::app()->end();
                 }
             }

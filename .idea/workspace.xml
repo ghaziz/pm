@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5a59cb-8534-47f9-a8c5-804a6a1814eb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/Helper/LogHelper.php" afterPath="$PROJECT_DIR$/protected/components/Helper/LogHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/PM.php" afterPath="$PROJECT_DIR$/protected/components/PM.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/Helper/RoleHelper.php" afterPath="$PROJECT_DIR$/protected/components/Helper/RoleHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/Helper/TaskHelper.php" afterPath="$PROJECT_DIR$/protected/components/Helper/TaskHelper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/WebUser.php" afterPath="$PROJECT_DIR$/protected/components/WebUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/users/_form.php" afterPath="$PROJECT_DIR$/protected/views/users/_form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/project/index.php" afterPath="$PROJECT_DIR$/protected/views/project/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/task/index.php" afterPath="$PROJECT_DIR$/protected/views/task/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/TaskController.php" afterPath="$PROJECT_DIR$/protected/controllers/TaskController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/task/_form.php" afterPath="$PROJECT_DIR$/protected/views/task/_form.php" />
     </list>
     <ignored path="pm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,29 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="list.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/views/comments/list.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1122">
-              <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
-              <folding>
-                <marker date="1425099519284" expanded="true" signature="1633:2272" placeholder="..." />
-                <marker date="1425099519284" expanded="true" signature="2675:2714" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3175" max-vertical-offset="3723">
-              <caret line="198" column="23" selection-start-line="198" selection-start-column="23" selection-end-line="198" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CommentsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/CommentsController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -108,9 +75,11 @@
       <file leaf-file-name="TaskController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/controllers/TaskController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2037036" vertical-offset="1445" max-vertical-offset="3587">
-              <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-              <folding />
+            <state vertical-scroll-proportion="-3.5" vertical-offset="1613" max-vertical-offset="3587">
+              <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+              <folding>
+                <marker date="1425100598871" expanded="true" signature="3451:3718" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,18 +102,38 @@
       <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/users/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="136">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="_form.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/views/task/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/task/edit.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+              <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/users/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.83168316" vertical-offset="3541" max-vertical-offset="4811">
-              <caret line="233" column="92" selection-start-line="233" selection-start-column="92" selection-end-line="233" selection-end-column="92" />
+            <state vertical-scroll-proportion="-6.5384617" vertical-offset="51" max-vertical-offset="4811">
+              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -183,7 +172,6 @@
         <option value="$PROJECT_DIR$/protected/views/project/_form.php" />
         <option value="$PROJECT_DIR$/protected/controllers/CompanyController.php" />
         <option value="$PROJECT_DIR$/protected/views/company/info_show.php" />
-        <option value="$PROJECT_DIR$/protected/views/task/_form.php" />
         <option value="$PROJECT_DIR$/protected/views/project/new_attach.php" />
         <option value="$PROJECT_DIR$/protected/views/task/_form_group.php" />
         <option value="$PROJECT_DIR$/protected/components/UserIdentity.php" />
@@ -197,7 +185,6 @@
         <option value="$PROJECT_DIR$/protected/controllers/UsersController.php" />
         <option value="$PROJECT_DIR$/protected/views/users/info_show.php" />
         <option value="$PROJECT_DIR$/protected/views/company/index.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/TaskController.php" />
         <option value="$PROJECT_DIR$/protected/components/Helper/CompanyHelper.php" />
         <option value="$PROJECT_DIR$/protected/components/Helper/UserHelper.php" />
         <option value="$PROJECT_DIR$/protected/components/Helper/RoleHelper.php" />
@@ -215,6 +202,8 @@
         <option value="$PROJECT_DIR$/protected/views/task/index.php" />
         <option value="$PROJECT_DIR$/protected/components/Helper/TaskHelper.php" />
         <option value="$PROJECT_DIR$/protected/views/users/_form.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/TaskController.php" />
+        <option value="$PROJECT_DIR$/protected/views/task/_form.php" />
       </list>
     </option>
   </component>
@@ -602,7 +591,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="704" extended-state="0" />
+    <frame x="1" y="1" width="1364" height="704" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -612,7 +601,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3504601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3846154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3846154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3653846" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -693,18 +682,11 @@
           <option name="timeStamp" value="118" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="140" />
+      <option name="time" value="141" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../yii-1.1.16.bca042/framework/web/auth/CUserIdentity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.64950496" vertical-offset="651" max-vertical-offset="1360">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../yii-1.1.16.bca042/framework/web/auth/CBaseUserIdentity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.6153846" vertical-offset="295" max-vertical-offset="2210">
@@ -788,13 +770,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="531">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/task/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8076925" vertical-offset="936" max-vertical-offset="2040">
-          <caret line="67" column="101" selection-start-line="67" selection-start-column="101" selection-end-line="67" selection-end-column="101" />
         </state>
       </provider>
     </entry>
@@ -1028,8 +1003,8 @@
         <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="1122">
           <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
           <folding>
-            <marker date="1425099519284" expanded="true" signature="1633:2272" placeholder="..." />
-            <marker date="1425099519284" expanded="true" signature="2675:2714" placeholder="..." />
+            <marker date="1425099519284" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1425099519284" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1070,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/TaskController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2037036" vertical-offset="1445" max-vertical-offset="3587">
-          <caret line="92" column="30" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/Helper/RoleHelper.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.192307" vertical-offset="33" max-vertical-offset="918">
@@ -1091,18 +1058,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/TaskController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5" vertical-offset="1613" max-vertical-offset="3587">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <marker date="1425100598871" expanded="true" signature="3451:3718" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/task/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/users/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="311">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/users/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83168316" vertical-offset="3541" max-vertical-offset="4811">
-          <caret line="233" column="92" selection-start-line="233" selection-start-column="92" selection-end-line="233" selection-end-column="92" />
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="51" max-vertical-offset="4811">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/task/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2057">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
