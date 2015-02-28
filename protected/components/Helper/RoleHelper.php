@@ -68,7 +68,6 @@ class RoleHelper
 				break;
 			}
 		}
-
 		$count=Roles::model()->count("user_id=:uid and $field=:field",array(':uid'=>Yii::app()->user->id,':field'=>'1'));
 		if((Yii::app()->user->name == UserHelper::ADMIN) || ($count == 1))
 		{
@@ -116,6 +115,17 @@ class RoleHelper
 
         if($result) return true;
         RoleHelper::redirect($controllerObj,$showNoAccess,$isAjax);
+    }
+
+    public static function checkCommentsAccess($action,$commentModel,$controllerObj=null, $showNoAccess=true, $isAjax=true){
+        switch($action){
+            case 'delete':
+            case 'edit':
+                if(Yii::app()->user->isAdmin) return true;
+                if(Yii::app()->user->id == $commentModel->user_id)return true;
+                RoleHelper::redirect($controllerObj,$showNoAccess,$isAjax);
+                break;
+        }
     }
 
     private static function redirect($controllerObj=null, $showNoAccess=true, $isAjax=true)

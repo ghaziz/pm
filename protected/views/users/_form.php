@@ -159,6 +159,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_comp', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_comp', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -185,6 +193,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_task', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_task', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -208,6 +224,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                         <div class="col-sm-3">
                                             <label class="checkbox-inline">
                                                 <?php echo $form->checkBox($role, 'delete_proj', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_proj', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_proj', array('class' => 'access')); ?>
                                             </label>
                                         </div>
                                     </div>

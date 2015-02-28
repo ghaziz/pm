@@ -69,5 +69,33 @@ class WebUser extends CWebUser {
         if($user==null) return null;
         return $user;
     }
+
+    public function getIsAdmin()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::ADMIN;
+    }
+
+    public function getIsEmployer()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::EMPLOYER;
+    }
+
+    public function getIsEmployee()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::EMPLOYEE;
+    }
+
+    public function getIsContrator()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::CONTRACTOR;
+    }
 }
 ?>

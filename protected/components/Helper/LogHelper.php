@@ -26,9 +26,10 @@ class LogHelper
 	CONST TASK = 2;
 	CONST USER= 3;
 	CONST REPORT = 4;
-	CONST ATTACHMENT= 3;
-	
-	public static function proccess($level,$category,$message)
+	CONST ATTACHMENT= 5;
+    const COMMENT = 6;
+
+    public static function proccess($level,$category,$message)
 	{
 		$user_id = Yii::app()->user->id;
 		$time = time();

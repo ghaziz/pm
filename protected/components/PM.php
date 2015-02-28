@@ -222,5 +222,10 @@ EOT;
         Yii::app()->end();
     }
 
+    public static function purify($text){
+        $parser = new CHtmlPurifier();
+        return $parser->purify($text);
+    }
+
 
 }

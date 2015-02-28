@@ -98,6 +98,7 @@
 								<a href="" onclick="confirmDelete('<?php echo $this->createUrl('project/del')?>','<?php echo $project->id?>','u')" title="حذف پروژه"><i class="fa fa-times"></i></a>
 								<a href="" onclick="showModal('<?php echo $this->createUrl('attachments/index',array('bind_type'=>'projects','bind_id'=>$project->id))?>')" title="افزودن پیوست"><i class="fa fa-cloud-upload"></i></a>
 								<a href="<?php echo $this->createUrl('attachments/list',array('bind_type'=>'projects','bind_id'=>$project->id,'title'=>$project->title));?>" title="پیوست ها"><i class="fa fa-cloud-download"></i></a>
+								<a href="<?php echo $this->createUrl('comments/list',array('bind_type'=>'projects','bind_id'=>$project->id,'title'=>$project->title));?>" title="نظرات"><i class="fa fa-comments"></i></a>
 							</td>
 						</tr>
 				<?php } ?>
