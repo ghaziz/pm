@@ -29,6 +29,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/dist/css/persian-datepicker-0.3.6.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nanoscroller/nanoscroller.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.icheck/skins/flat/green.css" >
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -89,7 +90,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                 <li><a href="<?php echo $this->createUrl('task/index'); ?>">لیست تسک ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new')?>')">ایجاد</a></li>
 								<li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new_group')?>')">ایجاد گروه</a></li>
-								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">لیست گروه ها</a></li>
+								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">ایجاد گروه تسک</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>کاربران</span></a>
