@@ -28,6 +28,15 @@ class UserHelper
         }
     }
 
+    public static function getEmployerProjects($employerId){
+        return CHtml::listData(
+            Project::model()->findAll(
+                array('user_id=:user_id',array(':user_id'=>$employerId))
+            )
+            ,'id','id'
+        );
+    }
+
     public static function getModel()
     {
         $model = "";
@@ -37,18 +46,26 @@ class UserHelper
             case UserHelper::ADMIN:
                 $model = Users::model()->findAll();
                 break;
-            case UserHelper::EMPLOYER:
+            case UserHelper::EMPLOYEE:
                 $model = Users::model()->find("id=:id", array(':id'=>Yii::app()->user->id));
                 break;
             case UserHelper::CONTRACTOR:
-                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->user->company));
                 break;
-            case UserHelper::EMPLOYEE:
-                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->company));
+            case UserHelper::EMPLOYER:
+//                $companiesId = UserHelper::getEmployerProjects(Yii::app()->user->id);
+//                $model = Users::model()->findAllByAttributes("id_company=:id", array(':id'=>$companiesId));
+                $model = Users::model()->findAll("id_company=:id", array(':id'=>Yii::app()->user->company));
                 break;
         }
         if($model==null){return array();};
         return $model;
+    }
+
+    public static function getTypeOfUser($id)
+    {
+        $user = Users::model()->findByPk($id);
+        return $user->type_employee;
     }
 
 

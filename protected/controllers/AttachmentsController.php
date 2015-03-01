@@ -26,8 +26,8 @@ class AttachmentsController extends Controller
                     $attachmentId = AttachmentsHelper::save(PM::getBaseAttachmentsPath() . $fileNameOnServer, $_GET['bind_type'], $bind_id);
                     PM::getOutputForSuccessUpload($_GET['bind_type'], $_GET['bind_id'], $attachmentId, $file);
                 }
-            }else{
-                echo json_encode(array('status'=>Status::ERROR,'msg'=>'نوع فایل غیر مجاز است!'));
+            } else {
+                echo json_encode(array('status' => Status::ERROR, 'msg' => 'نوع فایل غیر مجاز است!'));
             }
         } else {
             die("Invalid upload request");
@@ -46,20 +46,19 @@ class AttachmentsController extends Controller
 
     public function actionList()
     {
-        RoleHelper::checkAccessControl('project', 'view', $this,true,false);
-        if(isset($_GET['bind_type'],$_GET['bind_id'],$_GET['title'])){
-            $model = Attachments::model()->findAll('bind_type=:bt and bind_id=:bi',array(
-                ':bt'=>$_GET['bind_type'],
-                ':bi'=>$_GET['bind_id']
+        RoleHelper::checkAccessControl('project', 'view', $this, true, false);
+        if (isset($_GET['bind_type'], $_GET['bind_id'], $_GET['title'])) {
+            $model = Attachments::model()->findAll('bind_type=:bt and bind_id=:bi', array(
+                ':bt' => $_GET['bind_type'],
+                ':bi' => $_GET['bind_id']
             ));
 
 
-            $this->render('list',array('model'=>$model,'title'=>$_GET['title']));
-        }else{
-            throw new CHttpException(404,'صفحه مورد نظر پیدا نشد');
+            $this->render('list', array('model' => $model, 'title' => $_GET['title']));
+        } else {
+            throw new CHttpException(404, 'صفحه مورد نظر پیدا نشد');
         }
     }
-
     public function actionDel()
     {
 

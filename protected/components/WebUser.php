@@ -52,7 +52,50 @@ class WebUser extends CWebUser {
     public function getCompany()
     {
         $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return -1;
         return $user->id_company;
+    }
+
+    public function getCompaniesModel()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return array();
+        return array($user->idCompany);
+    }
+
+    public function getModel()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return null;
+        return $user;
+    }
+
+    public function getIsAdmin()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::ADMIN;
+    }
+
+    public function getIsEmployer()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::EMPLOYER;
+    }
+
+    public function getIsEmployee()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::EMPLOYEE;
+    }
+
+    public function getIsContrator()
+    {
+        $user = $this->loadUser(Yii::app()->user->id);
+        if($user==null) return false;
+        return $this->getTypeOfUser() == UserHelper::CONTRACTOR;
     }
 }
 ?>

@@ -1,4 +1,9 @@
-<?php /* @var $this Controller */ ?>
+<?php /* @var $this Controller */
+$permissionHiddenControl = '';
+if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
+    $permissionHiddenControl = 'hide';
+}
+?>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -60,25 +65,37 @@
                         <li><a href="#"><i class="fa fa-smile-o"></i><span>شرکت ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('company/index'); ?>">لیست شرکت ها</a></li>
+								
+							<?php $user = Users::model()->findByPk(Yii::app()->user->id);
+							if($user->type_employee == UserHelper::ADMIN || $user->type_employee == UserHelper::EMPLOYER)
+							{ ?>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('company/new')?>')">ایجاد</a></li>
+							<?php } ?>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>پروژه ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('project/index'); ?>">لیست پروژه ها</a></li>
+								
+							<?php if($user->type_employee == UserHelper::ADMIN || $user->type_employee == UserHelper::EMPLOYER)
+							{ ?>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('project/new')?>')">ایجاد</a></li>
+							<?php } ?>
+							
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>تسک ها</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('task/index'); ?>">لیست تسک ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new')?>')">ایجاد</a></li>
+								<li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new_group')?>')">ایجاد گروه</a></li>
+								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">لیست گروه ها</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>کاربران</span></a>
                             <ul class="sub-menu">
                                 <li><a href="<?php echo $this->createUrl('users/index'); ?>">لیست کاربران</a></li>
-                                <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('users/new')?>')">ایجاد</a></li>
+                                <li><a href="#" class="md-trigger <?php echo $permissionHiddenControl; ?>" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('users/new')?>')">ایجاد</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -102,68 +119,43 @@
                                                                                             src="<?php echo Yii::app()->user->image; ?>"/><span><?php echo Yii::app()->user->name; ?></span>
                                 <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">حساب من</a></li>
-                                <li><a href="#">پروفایل</a></li>
-                                <li><a href="#">پیام ها</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('users/account')?>">حساب من</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('users/profile')?>">پروفایل</a></li>
                                 <li class="divider"></li>
-                                <li><a href="<?php echo $this->createUrl('site/logout'); ?>">خروج</a></li>
+                                <li><a href="<?php echo $this->createAbsoluteUrl('site/logout')?>">خروج</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav not-nav">
                         <li class="button dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class=" fa fa-inbox"></i></a>
-                            <ul class="dropdown-menu messages">
-                                <li>
-                                    <div class="nano nscroller">
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar2.jpg" alt="avatar" /><span class="date pull-right">13 دی.</span> <span class="name">محمد</span> سلام، خوبی؟
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar_50.jpg" alt="avatar" /><span class="date pull-right">20 آر.</span><span class="name">هوشگ</span> سلام، این خبرت جالب بود.
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar4_50.jpg" alt="avatar" /><span class="date pull-right">2 بهمن.</span><span class="name">هادی</span> موفق باشی!
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar3_50.jpg" alt="avatar" /><span class="date pull-right">2 آذر.</span><span class="name">رضا</span> سلام، من رضا هستم.
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="foot"><li><a href="#">نمایش تمامی پیام ها </a></li></ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="button dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="bubble">2</span></a>
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="bubble"><?php echo PM::count_unread_cmnt(); ?></span></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="nano nscroller">
                                         <div class="content">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-cloud-upload info"></i><b>هادی</b> اکنون شما را دنبال می کند <span class="date">2 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-male success"></i> <b>عباس</b> برای پیوند شما دیدگاهی ارسال کرده <span class="date">15 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-bug warning"></i> <b>الهه</b> برای ارسال شما دیدگاه ارسال نمود <span class="date">30 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-credit-card danger"></i> <b>زهرا</b> درخواستی برای شما ارسال نمود <span class="date">1 ساعت پیش.</span></a></li>
+												<?php 
+													$comments = PM::unread_cmnts();
+													foreach($comments as $comment)
+													{	
+														if($comment->bind_type == 'projects'){
+													?>
+													  <li><a href="<?php echo $this->createUrl('comments/list',array('bind_type'=>'projects','bind_id'=>$comment->bind_id,'title'=>'نظرات داده شده در مورد این پروژه'));?>"><i class="fa fa-credit-card danger"></i> <b><?php echo $comment->user->username; ?> </b> <?php echo $comment->context; ?> <span class="date"><?php echo PM::ago($comment->time); ?> </span></a></li>
+													<?php
+													  }
+													  if($comment->bind_type == 'tasks'){ ?>
+													   <li><a href="<?php echo $this->createUrl('comments/list',array('bind_type'=>'tasks','bind_id'=>$comment->bind_id,'title'=>'نظرات داده شده در مورد این تسک'));?>"><i class="fa fa-credit-card danger"></i> <b><?php echo $comment->user->username; ?> </b> <?php echo $comment->context; ?> <span class="date"><?php echo PM::ago($comment->time); ?> </span></a></li>
+													  <?php
+													  }
+													}
+												?>
                                             </ul>
                                         </div>
                                     </div>
-                                    <ul class="foot"><li><a href="#">نمایش تمامی فعالیت ها </a></li></ul>
                                 </li>
                             </ul>
                         </li>
-                        <li class="button"><a class="toggle-menu menu-left push-body" href="javascript:;" class="speech-button"><i class="fa fa-comments"></i></a></li>
+                    
                     </ul>
 
                 </div><!--/.nav-collapse animate-collapse -->
@@ -204,11 +196,14 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/behaviour/core.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.icheck/icheck.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.niftymodals/js/jquery.modalEffects.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/lib/persian-date.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/dist/js/persian-datepicker-0.3.6.min.js"></script>
 
 <!--( Bootstrap core JavaScript )-->
 <!--<script src="--><?php //echo Yii::app()->request->baseUrl; ?><!--/js/behaviour/voice-commands.js"></script>-->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/app.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/table-filter.js"></script>
 
 </body>
 </html>

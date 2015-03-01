@@ -1,6 +1,23 @@
 /**
  * Created by ebrahim on 16/02/2015.
  */
+$.fn.scrollTo = function( target, options, callback ){
+    if(typeof options == 'function' && arguments.length == 2){ callback = options; options = target; }
+    var settings = $.extend({
+        scrollTarget  : target,
+        offsetTop     : 50,
+        duration      : 500,
+        easing        : 'ease-out'
+    }, options);
+    return this.each(function(){
+        var scrollPane = $(this);
+        var scrollTarget = (typeof settings.scrollTarget == "number") ? settings.scrollTarget : $(settings.scrollTarget);
+        var scrollY = (typeof scrollTarget == "number") ? scrollTarget : scrollTarget.offset().top + scrollPane.scrollTop() - parseInt(settings.offsetTop);
+        scrollPane.animate({scrollTop : scrollY }, parseInt(settings.duration), settings.easing, function(){
+            if (typeof callback == 'function') { callback.call(this); }
+        });
+    });
+}
 function showModal($url) {
     event.preventDefault();
     $.ajax({
@@ -48,6 +65,8 @@ $(document).ready(function (e) {
 function sendAjaxForm($url, formId) {
     event.stopPropagation();
     event.preventDefault();
+    var sendBtn = $(this);
+    sendBtn.prop('disable',true);
 
     // Create a jQuery object from the form
     $form = $('#' + formId);
@@ -79,9 +98,11 @@ function sendAjaxForm($url, formId) {
             showModalLoading();
         }
     }).success(function (data) {
+        sendBtn.prop('disable',false);
         showModalData(data);
     }).error(function (e) {
         //showModalError();
+        sendBtn.prop('disable',false);
         showModalData(e.responseText);
     });
 }
@@ -101,6 +122,7 @@ function showModalError() {
 
 function confirmDelete($url, $id, prefixToDel) {
     event.preventDefault();
+    var gritter_id=-1;
     r = confirm('آیا مطمئن هستید؟');
     if (r == true) {
         $.ajax({
@@ -108,13 +130,33 @@ function confirmDelete($url, $id, prefixToDel) {
             type: 'POST',
             data: {'id': $id},
             beforeSend: function () {
-                showModalLoading();
+                gritter_id = $.gritter.add({
+                    title: '',
+                    text: 'در حال حذف...لطفا صبر کنید......',
+                    image: 'images/loader.gif',
+                    imageSize: 15,
+                    class_name: 'clean',
+                    time: '999999'
+                });
             }
         }).success(function (data) {
-            $('#' + prefixToDel + $id).remove();
-            showModalData(data);
+
+            $('#' + prefixToDel + $id).slideUp(1000).remove();
+            $.gritter.remove(gritter_id);
+            $.gritter.add({
+                title: '',
+                text: 'با موفقیت انجام شد',
+                class_name: 'clean',
+                time: ''
+            });
         }).error(function (e) {
-            showModalError();
+            $.gritter.remove(gritter_id);
+            $.gritter.add({
+                title: '',
+                text: 'با خطا مواجه شد.لطفا دوباره سعی کنید...',
+                class_name: 'clean',
+                time: ''
+            });
         });
     }
 }
@@ -161,4 +203,12 @@ function UpdateTypeAndDescription($url,$attachmentsId){
             time: ''
         });
     });
+}
+function ansComment($id){
+    event.stopPropagation();
+    event.preventDefault();
+    $blockquote = '<blockquote>'+$("#context-"+$id).html()+'</blockquote>';
+    $("#Comment_context").val($blockquote+"\n");
+    $("#Comment_context").focus();
+    $('body').scrollTo('#Comment_context',{duration:'slow', offsetTop : '50'});
 }

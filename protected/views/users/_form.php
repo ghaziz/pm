@@ -1,6 +1,6 @@
 <?php
-/* @var $this CompanyController */
-/* @var $model Company */
+/* @var $this UsersController */
+/* @var $model Users */
 /* @var $form CActiveForm */
 $permissionHiddenControl = '';
 if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
@@ -52,7 +52,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                             <div class="form-group">
                                 <?php echo $form->label($model, 'password', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">
-                                    <?php echo $form->textField($model, 'password', array('class' => 'form-control')); ?>
+                                    <?php echo $form->passwordField($model, 'password', array('class' => 'form-control')); ?>
                                 </div>
                                 <?php echo $form->error($model, 'password', array('class' => 'col-sm-3 control-label')); ?>
                             </div>
@@ -104,7 +104,15 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                             <div class="form-group">
                                 <?php echo $form->label($model, 'type_employee', array('class' => 'col-sm-3 control-label')); ?>
                                 <div class="col-sm-6">
-                                    <?php echo $form->dropDownList($model, 'type_employee', CompanyHelper::getTypeOfEmployee(), array('class' => 'form-control')); ?>
+
+                                    <?php
+                                    if($id == 'user-new-form'){
+                                    $list = CompanyHelper::getTypeOfEmployee();
+
+                                    }else{
+                                        $list = CompanyHelper::getTypeOfEmployee($model->type_employee,true);
+                                    }
+                                    echo $form->dropDownList($model, 'type_employee',$list , array('class' => 'form-control')); ?>
                                 </div>
                                 <?php echo $form->error($model, 'type_employee', array('class' => 'col-sm-3 control-label')); ?>
                             </div>
@@ -151,6 +159,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_comp', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_comp', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -177,6 +193,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_task', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_task', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -200,6 +224,14 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                         <div class="col-sm-3">
                                             <label class="checkbox-inline">
                                                 <?php echo $form->checkBox($role, 'delete_proj', array('class' => 'access')); ?>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <?php echo $form->label($role, 'edit_proj', array('class' => 'col-sm-9 control-label')); ?>
+                                        <div class="col-sm-3">
+                                            <label class="checkbox-inline">
+                                                <?php echo $form->checkBox($role, 'edit_proj', array('class' => 'access')); ?>
                                             </label>
                                         </div>
                                     </div>

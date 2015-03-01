@@ -68,7 +68,6 @@ class RoleHelper
 				break;
 			}
 		}
-
 		$count=Roles::model()->count("user_id=:uid and $field=:field",array(':uid'=>Yii::app()->user->id,':field'=>'1'));
 		if((Yii::app()->user->name == UserHelper::ADMIN) || ($count == 1))
 		{
@@ -83,7 +82,7 @@ class RoleHelper
         if($typeOfUser == UserHelper::ADMIN){return true;}
 
         if ($action == 'new') {
-            $result = $typeOfUser != UserHelper::EMPLOYER;
+            $result = $typeOfUser != UserHelper::EMPLOYEE;
         }
         if ($action == 'edit') {
             if (Yii::app()->user->id == $extraField) {
@@ -101,6 +100,7 @@ class RoleHelper
         };
         if($action == 'create-this-type-of-user'){
             $typeOfUser = Yii::app()->user->typeOfUser;
+            if($typeOfUser == $extraField) return true;
             if($typeOfUser == UserHelper::ADMIN) return true;
             if($typeOfUser == UserHelper::EMPLOYER &&  $extraField==UserHelper::CONTRACTOR)return true;
             if($typeOfUser == UserHelper::CONTRACTOR &&  $extraField==UserHelper::EMPLOYEE)return true;
@@ -109,12 +109,23 @@ class RoleHelper
 
         if($action == 'view-permission-tab'){
             $typeOfUser = Yii::app()->user->typeOfUser;
-            if($typeOfUser == UserHelper::ADMIN || $typeOfUser == UserHelper::EMPLOYEE ||$typeOfUser == UserHelper::CONTRACTOR )return true;
-            if($typeOfUser == UserHelper::EMPLOYER)$result = false;
+            if($typeOfUser == UserHelper::ADMIN || $typeOfUser == UserHelper::EMPLOYER ||$typeOfUser == UserHelper::CONTRACTOR )return true;
+            if($typeOfUser == UserHelper::EMPLOYEE)$result = false;
         }
 
         if($result) return true;
         RoleHelper::redirect($controllerObj,$showNoAccess,$isAjax);
+    }
+
+    public static function checkCommentsAccess($action,$commentModel,$controllerObj=null, $showNoAccess=true, $isAjax=true){
+        switch($action){
+            case 'delete':
+            case 'edit':
+                if(Yii::app()->user->isAdmin) return true;
+                if(Yii::app()->user->id == $commentModel->user_id)return true;
+                RoleHelper::redirect($controllerObj,$showNoAccess,$isAjax);
+                break;
+        }
     }
 
     private static function redirect($controllerObj=null, $showNoAccess=true, $isAjax=true)

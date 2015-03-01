@@ -1,27 +1,30 @@
 <?php
 
 /**
- * This is the model class for table "group_task".
+ * This is the model class for table "comment".
  *
- * The followings are the available columns in table 'group_task':
+ * The followings are the available columns in table 'comment':
  * @property string $id
- * @property string $title
- * @property string $description
+ * @property string $bind_type
+ * @property string $context
+ * @property string $parent
  * @property string $time
  * @property string $user_id
+ * @property string $bind_id
+ * @property integer $modified_by
+ * @property integer $read
  *
  * The followings are the available model relations:
  * @property Users $user
- * @property Task[] $tasks
  */
-class GroupTask extends CActiveRecord
+class Comment extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'group_task';
+		return 'comment';
 	}
 
 	/**
@@ -32,13 +35,13 @@ class GroupTask extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, user_id', 'required'),
-			array('title', 'length', 'max'=>100),
-			array('time, user_id', 'length', 'max'=>10),
-			array('description', 'safe'),
+			array('bind_type, context, user_id, bind_id', 'required'),
+			array('modified_by, read', 'numerical', 'integerOnly'=>true),
+			array('bind_type', 'length', 'max'=>11),
+			array('parent, time, user_id, bind_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, title, description, time, user_id', 'safe', 'on'=>'search'),
+			array('id, bind_type, context, parent, time, user_id, bind_id, modified_by, read', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,7 +54,6 @@ class GroupTask extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
-			'tasks' => array(self::HAS_MANY, 'Task', 'id_group'),
 		);
 	}
 
@@ -62,10 +64,14 @@ class GroupTask extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'title' => 'نام',
-			'description' => 'توضیحات',
+			'bind_type' => 'Bind Type',
+			'context' => 'متن',
+			'parent' => 'Parent',
 			'time' => 'Time',
 			'user_id' => 'User',
+			'bind_id' => 'Bind',
+			'modified_by' => 'Modified By',
+			'read' => 'Read',
 		);
 	}
 
@@ -88,10 +94,14 @@ class GroupTask extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('description',$this->description,true);
+		$criteria->compare('bind_type',$this->bind_type,true);
+		$criteria->compare('context',$this->context,true);
+		$criteria->compare('parent',$this->parent,true);
 		$criteria->compare('time',$this->time,true);
 		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('bind_id',$this->bind_id,true);
+		$criteria->compare('modified_by',$this->modified_by);
+		$criteria->compare('read',$this->read);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -102,7 +112,7 @@ class GroupTask extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return GroupTask the static model class
+	 * @return Comment the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

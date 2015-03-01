@@ -7,12 +7,17 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="header">
-                    <h3>اطلاعات پروژه</h3>
+                    <h3><?php echo $model->title; ?></h3>
                 </div>
+				<div class="tab-container">
+					 <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">اطلاعات اولیه</a></li>
+						<li class=""><a href="#extra" data-toggle="tab">اطلاعات تکمیلی</a></li>
+                        <li class=""><a href="#profile" data-toggle="tab">پیوست ها</a></li>
+                    </ul>
+				<div class="tab-content">
+				 <div class="tab-pane cont active" id="home">				
 					<div class="block-flat">
-						<div class="header">							
-							<h3><?php echo $model->title; ?></h3>
-						</div>
 						<div class="content">
 							<table class="no-border">
 								<thead class="no-border">
@@ -35,13 +40,30 @@
 										<td class="text-center primary-emphasis"><?php echo PM::getJalali($model->end_time); ?></td>
 									</tr>
 									<tr>
+										<?php 
+										$month=PM::remain_days(time(),$model->end_time);
+										?>
 										<td>تعداد روزهای باقی مانده</td>
-										<td class="text-center primary-emphasis"><?php echo $model->end_time - $model->start_time; ?></td>
+										<td class="text-center primary-emphasis"><?php echo $month; ?></td>
 									</tr>	
 									<tr>
 										<td>تاریخ ثبت پروژه</td>
 										<td class="text-center primary-emphasis"><?php echo PM::getJalali($model->time); ?></td>
 									</tr>
+				    				<tr>
+										<td>کارفرمای ناظر بر پروژه</td>
+										<td class="text-center primary-emphasis"><?php echo PM::getUserName($model->user_id); ?></td>
+									</tr>
+								</tbody>
+							</table>						
+						</div>
+					</div>
+					</div>
+					<div class="tab-pane cont" id="extra">	
+						<div class="block-flat">
+							<div class="content">
+								<table class="no-border">
+								<tbody class="no-border-y">
 									<tr>
 										<td>مبلغ پروژه</td>
 										<td class="text-center primary-emphasis"><?php echo $model->price ? $model->price."ریال" : 'نامشخص'; ?></td>
@@ -67,18 +89,21 @@
 										<td class="text-center primary-emphasis"><?php echo PM::getCompanytitle($model->id_company); ?></td>
 									</tr>
 									<tr>
-										<td>کارفرمای ناظر بر پروژه</td>
-										<td class="text-center primary-emphasis"><?php echo PM::getUserName($model->user_id); ?></td>
-									</tr>
-									<tr>
 										<td>توضیحات</td>
 										<td class="text-center primary-emphasis"><?php echo $model->description; ?></td>
-									</tr>										
-							</table>						
+									</tr>
+								</tbody>
+							</table>
+						  </div>
 						</div>
 					</div>
+					<div class="tab-pane cont" id="profile">
+					<p>در این قسمت پیسوست ها قرار می گیرد</p>
+					</div>
+					<a href="<?php echo Yii::app()->createUrl('project/print',array('id' => $model->id)); ?>" title="چاپ اطلاعات"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/gallery/print.png" /></a>
+				</div>
+			</div>
 			</div>
 		</div>
 	 </div>
-	
 </div>

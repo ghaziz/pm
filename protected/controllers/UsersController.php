@@ -117,6 +117,85 @@ class UsersController extends Controller
         }
     }
 
+    public function actionInfo(){
+        if (isset($_GET['id'])) {
+            RoleHelper::checkUsersAccessControl('edit',$_GET['id'],null,$this);
+            $model = Users::model()->findByPk($_GET['id']);
+        }
+        $this->renderPartial('info', array('model' => $model, false, true));
+    }
+	
+	
+	public function actionProfile()
+	{
+		//access controll
+		$model = Users::model()->findByPk(Yii::app()->user->id);
+		
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'profile-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+		
+		if (isset($_POST['Users'])) {
+		
+			$backUpPhoto = $model->photo;
+			$model->attributes = $_POST['Users'];
+		    $model->birthday = PM::convertJalaliToGeorgian($model->birthday);
+			$model->photo = CUploadedFile::getInstance($model, 'photo');
+			if ($model->validate()) {
+				if ($model->photo != null) {
+                   $fileName = time().'.' . $model->photo->getExtensionName();
+                   $savePath = PM::getAttachmentPath() .  $fileName;
+                   $model->photo->saveAs($savePath);
+                    $model->photo = PM::getBaseAttachmentsPath() . $fileName;
+                    }
+				else{
+                        $model->photo = $backUpPhoto;
+                    }
+				  $model->update(false);
+				  LogHelper::proccess(LogHelper::INSERT, LogHelper::USER, "پروفایل ویرایش شد");
+				  // redirect to success page
+                  $this->redirect(array('site/index')); 
+                  Yii::app()->end();					
+			}		
+			
+		}
+		
+		 $model->birthday = PM::getJalali($model->birthday);
+         $this->render('profile',array('model'=>$model));		
+		
+	}
+	
+     public function actionAccount()
+	{
+		//access controll
+		$model = Users::model()->findByPk(Yii::app()->user->id);
+		
+		if (isset($_POST['ajax']) && $_POST['ajax'] === 'account-form') {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+		
+		if (isset($_POST['Users'])) {
+			$model->attributes = $_POST['Users'];
+			if ($model->validate()) {
+					if($_POST['repassword'] != null && ($_POST['Users']['password'] == $_POST['repassword'])){
+						$model->update(false);
+						LogHelper::proccess(LogHelper::INSERT, LogHelper::USER, "حساب کاربری تغییر کرد");
+						$this->redirect(array('site/index')); 
+						Yii::app()->end();
+					}
+					else{
+						 $model->addError('passerr', 'تکرار پسورد با پسورد برابر نیست.');
+					}
+			}		
+			
+		}
+		
+         $this->render('account',array('model'=>$model));		
+		
+	}
+
     public function filters()
     {
         return array(
