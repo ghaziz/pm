@@ -29,7 +29,6 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/pwt.datepicker-master/pwt.datepicker-master/dist/css/persian-datepicker-0.3.6.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nanoscroller/nanoscroller.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/style.css" />
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.icheck/skins/flat/green.css" >
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -90,7 +89,7 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                                 <li><a href="<?php echo $this->createUrl('task/index'); ?>">لیست تسک ها</a></li>
                                 <li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new')?>')">ایجاد</a></li>
 								<li><a href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('task/new_group')?>')">ایجاد گروه</a></li>
-								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">ایجاد گروه تسک</a></li>
+								<li><a href="<?php echo $this->createUrl('task/grouplist'); ?>">لیست گروه ها</a></li>
                             </ul>
                         </li>
                         <li><a href="#"><i class="fa fa-list-alt"></i><span>کاربران</span></a>
@@ -129,58 +128,34 @@ if(!RoleHelper::checkUsersAccessControl('view-permission-tab',null,null,false)){
                     </ul>
                     <ul class="nav navbar-nav not-nav">
                         <li class="button dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class=" fa fa-inbox"></i></a>
-                            <ul class="dropdown-menu messages">
-                                <li>
-                                    <div class="nano nscroller">
-                                        <div class="content">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar2.jpg" alt="avatar" /><span class="date pull-right">13 دی.</span> <span class="name">محمد</span> سلام، خوبی؟
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar_50.jpg" alt="avatar" /><span class="date pull-right">20 آر.</span><span class="name">هوشگ</span> سلام، این خبرت جالب بود.
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar4_50.jpg" alt="avatar" /><span class="date pull-right">2 بهمن.</span><span class="name">هادی</span> موفق باشی!
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src="images/avatar3_50.jpg" alt="avatar" /><span class="date pull-right">2 آذر.</span><span class="name">رضا</span> سلام، من رضا هستم.
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="foot"><li><a href="#">نمایش تمامی پیام ها </a></li></ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="button dropdown">
-                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="bubble">2</span></a>
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i><span class="bubble"><?php echo PM::count_unread_cmnt(); ?></span></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="nano nscroller">
                                         <div class="content">
                                             <ul>
-                                                <li><a href="#"><i class="fa fa-cloud-upload info"></i><b>هادی</b> اکنون شما را دنبال می کند <span class="date">2 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-male success"></i> <b>عباس</b> برای پیوند شما دیدگاهی ارسال کرده <span class="date">15 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-bug warning"></i> <b>الهه</b> برای ارسال شما دیدگاه ارسال نمود <span class="date">30 دقیقه پیش.</span></a></li>
-                                                <li><a href="#"><i class="fa fa-credit-card danger"></i> <b>زهرا</b> درخواستی برای شما ارسال نمود <span class="date">1 ساعت پیش.</span></a></li>
+												<?php 
+													$comments = PM::unread_cmnts();
+													foreach($comments as $comment)
+													{	
+														if($comment->bind_type == 'projects'){
+													?>
+													  <li><a href="<?php echo $this->createUrl('comments/list',array('bind_type'=>'projects','bind_id'=>$comment->bind_id,'title'=>'نظرات داده شده در مورد این پروژه'));?>"><i class="fa fa-credit-card danger"></i> <b><?php echo $comment->user->username; ?> </b> <?php echo $comment->context; ?> <span class="date"><?php echo PM::ago($comment->time); ?> </span></a></li>
+													<?php
+													  }
+													  if($comment->bind_type == 'tasks'){ ?>
+													   <li><a href="<?php echo $this->createUrl('comments/list',array('bind_type'=>'tasks','bind_id'=>$comment->bind_id,'title'=>'نظرات داده شده در مورد این تسک'));?>"><i class="fa fa-credit-card danger"></i> <b><?php echo $comment->user->username; ?> </b> <?php echo $comment->context; ?> <span class="date"><?php echo PM::ago($comment->time); ?> </span></a></li>
+													  <?php
+													  }
+													}
+												?>
                                             </ul>
                                         </div>
                                     </div>
-                                    <ul class="foot"><li><a href="#">نمایش تمامی فعالیت ها </a></li></ul>
                                 </li>
                             </ul>
                         </li>
-                        <li class="button"><a class="toggle-menu menu-left push-body" href="javascript:;" class="speech-button"><i class="fa fa-comments"></i></a></li>
+                    
                     </ul>
 
                 </div><!--/.nav-collapse animate-collapse -->

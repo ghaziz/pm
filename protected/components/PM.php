@@ -226,6 +226,93 @@ EOT;
         $parser = new CHtmlPurifier();
         return $parser->purify($text);
     }
+	
+	public static function count_cmnt($bind_type,$bind_id)
+	{
+		$count = Comment::model()->count(array('condition'=>'bind_type=:bt and bind_id=:bi','params'=> array(
+                ':bt' => $bind_type,
+                ':bi' => $bind_id) ));
+		return $count;
+	}
+	
+	public static function count_unread_cmnt()
+	{
+		$count = 0;
+		if(Yii::app()->user->typeOfUser == UserHelper::ADMIN || Yii::app()->user->typeOfUser == UserHelper::EMPLOYER)
+		{
+		 $models = 	Comment::model()->findAll();
+		 foreach($models as $model)
+		 {
+			if(($model->user->type_employee == UserHelper::CONTRACTOR || $model->user->type_employee == UserHelper::EMPLOYEE) && $model->read==CommentHelper::UNREAD){
+				$count++;
+			}
+		 }
+		}
+	    if(Yii::app()->user->typeOfUser == UserHelper::CONTRACTOR || Yii::app()->user->typeOfUser == UserHelper::EMPLOYEE)
+		{
+		 $models = 	Comment::model()->findAll();
+		 foreach($models as $model)
+		 {
+			if(($model->user->type_employee == UserHelper::ADMIN  || $model->user->type_employee == UserHelper::EMPLOYER) && $model->read==CommentHelper::UNREAD){
+				$count++;
+			}
+		 }
+		}
+		
+		return $count;
+	}
+		
+	public static function unread_cmnts()
+	{
+		$comments = array();
+		if(Yii::app()->user->typeOfUser == UserHelper::ADMIN || Yii::app()->user->typeOfUser == UserHelper::EMPLOYER)
+		{
+		 $models = 	Comment::model()->findAll();
+		 foreach($models as $model)
+		 {
+			if(($model->user->type_employee == UserHelper::CONTRACTOR || $model->user->type_employee == UserHelper::EMPLOYEE) && $model->read==CommentHelper::UNREAD){
+				$comments[] = $model;
+			}
+		 }
+		}
+	    if(Yii::app()->user->typeOfUser == UserHelper::CONTRACTOR || Yii::app()->user->typeOfUser == UserHelper::EMPLOYEE)
+		{
+		 $models = 	Comment::model()->findAll();
+		 foreach($models as $model)
+		 {
+			if(($model->user->type_employee == UserHelper::ADMIN  || $model->user->type_employee == UserHelper::EMPLOYER) && $model->read==CommentHelper::UNREAD){
+				$comments[] = $model;
+			}
+		 }
+		}
+		
+		return $comments;
+	}
+	
+	public static function ago($time, $after = false)
+    {
+        $periods = array("ثانیه", "دقیقه", "ساعت", "روز", "هفته", "ماه", "سال", "دهه");
+        $lengths = array("60", "60", "24", "7", "4.35", "12", "10");
+
+        $now = time();
+
+        $difference = abs($now - $time);
+        $tense = "قبل";
+        if ($after == true)
+            $tense = "دیگر";
+
+        for ($j = 0; $difference >= $lengths[$j] && $j < count($lengths) - 1; $j++) {
+            $difference /= $lengths[$j];
+        }
+
+        $difference = round($difference);
+
+        if ($difference != 1) {
+            $periods[$j] .= "";
+        }
+
+        return "$difference $periods[$j]  $tense";
+    }
 
 
 }

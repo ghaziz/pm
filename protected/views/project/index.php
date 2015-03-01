@@ -91,7 +91,7 @@
 								$month=PM::remain_days(time(),$project->end_time);
 							?>
 							<td><?php echo  $month; ?></td>
-							<td></td>
+							<td><a href="<?php echo  $this->createUrl('comments/list',array('bind_type'=>'projects','bind_id'=>$project->id,'title'=>$project->title)); ?>" title="تعداد نظرات"><span class="badge badge-danger"><?php echo PM::count_cmnt('projects',$project->id);  ?></span></a> </td>
 							<td>
 								<a title="اظلاعات کامل پروژه" href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('project/info',array('id'=>$project->id))?>')"><i class="fa fa-eye"></i></a>
 								<a title="ویرایش" href="#" class="md-trigger" data-modal="globalModal" onclick="showModal('<?php echo $this->createAbsoluteUrl('project/edit',array('id'=>$project->id))?>')"><i class="fa fa-edit"></i></a>

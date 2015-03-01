@@ -28,7 +28,7 @@ class LogHelper
 	CONST REPORT = 4;
 	CONST ATTACHMENT= 5;
 	CONST GROUP_TASK= 6;
-    CONST COMMENT = 7;
+	CONST COMMENT = 7;
 	
 	public static function proccess($level,$category,$message)
 	{

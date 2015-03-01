@@ -38,8 +38,8 @@ class CommentsController extends Controller
                 }
             }
         }
-        $url = $this->createUrl('comments/list',array('bind_type'=>$_GET['bind_type'],'bind_id'=>$_GET['bind_id'],'title'=>$_GET['title']));
-        $this->redirect($url);
+        //$url = $this->createUrl('comments/list',array('bind_type'=>$_GET['bind_type'],'bind_id'=>$_GET['bind_id'],'title'=>$_GET['title']));
+        $this->redirect(array('site/index'));
     }
 
     public function actionDel()

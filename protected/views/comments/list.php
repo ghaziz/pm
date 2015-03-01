@@ -3,7 +3,11 @@
     <hr/>
 </div>
 <ul class="cbp_tmtimeline">
-<?php foreach($model as $comment){ ?>
+<?php foreach($model as $comment){ 
+	$comment->read = CommentHelper::READ;
+	$comment->update(false);
+?>
+	
     <li id="<?php echo "comment-".$comment->id; ?>">
         <time class="cbp_tmtime"><span><?php echo Yii::app()->jdate->date('Y/m/d h:m:s',$comment->time); ?></span> <span><?php echo UserHelper::getDisplayName($comment->user->id); ?></span></time>
         <div class="comment_icon"><?php echo CHtml::image($comment->user->photo) ; ?></div>

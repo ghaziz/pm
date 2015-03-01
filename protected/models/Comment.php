@@ -12,6 +12,7 @@
  * @property string $user_id
  * @property string $bind_id
  * @property integer $modified_by
+ * @property integer $read
  *
  * The followings are the available model relations:
  * @property Users $user
@@ -35,12 +36,12 @@ class Comment extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('bind_type, context, user_id, bind_id', 'required'),
-			array('modified_by', 'numerical', 'integerOnly'=>true),
+			array('modified_by, read', 'numerical', 'integerOnly'=>true),
 			array('bind_type', 'length', 'max'=>11),
 			array('parent, time, user_id, bind_id', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, bind_type, context, parent, time, user_id, bind_id, modified_by', 'safe', 'on'=>'search'),
+			array('id, bind_type, context, parent, time, user_id, bind_id, modified_by, read', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +71,7 @@ class Comment extends CActiveRecord
 			'user_id' => 'User',
 			'bind_id' => 'Bind',
 			'modified_by' => 'Modified By',
+			'read' => 'Read',
 		);
 	}
 
@@ -99,6 +101,7 @@ class Comment extends CActiveRecord
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('bind_id',$this->bind_id,true);
 		$criteria->compare('modified_by',$this->modified_by);
+		$criteria->compare('read',$this->read);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
